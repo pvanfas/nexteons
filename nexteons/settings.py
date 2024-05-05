@@ -34,6 +34,8 @@ INSTALLED_APPS = [
 ]
 X_FRAME_OPTIONS = "SAMEORIGIN"
 SILENCED_SYSTEM_CHECKS = ["security.W019"]
+MESSAGE_STORAGE = "django.contrib.messages.storage.cookie.CookieStorage"
+
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",

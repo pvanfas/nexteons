@@ -1407,66 +1407,6 @@
             }
         }
     });
-    var instagramWrapperItems = document.querySelectorAll(".instafeed-wrapper");
-    instagramWrapperItems.forEach(function (instagramWrapperItem) {
-        var token = "IGQWROQXcwaFB4VEJZASDNIejd6NW5YUlNKb0pjUHN0S0pIQmZASUnl0d2xVR20xa2RqM1hRWGRLd2p1S3Q5NklCQkp2UXFfV2tFQUpibVVhZAnZAhM2VKY0pxYlNZAUHF2eTBCNDRRWW9LUzVnUjBFZATZAzRmVnWWNseVEZD",
-            _this = $(instagramWrapperItem),
-            token = _this.attr("data-token") || token,
-            total = _this.attr("data-total") || "6",
-            slider = _this.attr("data-slider-options"),
-            _html = _this.html(),
-            outputHTML = "";
-        if (typeof slider !== "undefined" && slider !== null) {
-            _this.html("");
-        }
-        $.ajax({
-            url: "https://graph.instagram.com/me/media?fields=id,media_type,media_url,timestamp,permalink&access_token=" + token,
-            type: "GET",
-            success: function (response) {
-                outputHTML += _this.find(".grid-item").length ? '<li class="grid-sizer"></li>' : "";
-                for (var x in response.data) {
-                    if (x < parseInt(total)) {
-                        if (response.data[x]["media_type"] == "IMAGE") {
-                            var link = response.data[x]["permalink"] || "",
-                                image = response.data[x]["media_url"] || "",
-                                likes = response.data[x]["like_count"] || "",
-                                comments = response.data[x]["comments_count"] || "",
-                                output = _html;
-                            output = output.replace(' href="#"', "");
-                            output = output.replace(' src="#"', "");
-                            output = output.replace("data-href", "href");
-                            output = output.replace("data-src", "src");
-                            output = output.replace("{{link}}", link);
-                            output = output.replace("{{image}}", image);
-                            output = output.replace("{{likes}}", likes);
-                            output = output.replace("{{comments}}", comments);
-                            outputHTML += output;
-                        }
-                    }
-                }
-                _this.html(outputHTML);
-                if (typeof slider !== "undefined" && slider !== null) {
-                    var sliderOptions = $.parseJSON(slider);
-                    var swiperObj = instagramWrapperItem.parentElement;
-                    if (typeof Swiper === "function") {
-                        new Swiper(swiperObj, sliderOptions);
-                    }
-                } else {
-                    _this.imagesLoaded(function () {
-                        _this.removeClass("grid-loading");
-                        if (typeof $.fn.isotope === "function") {
-                            _this.isotope({ layoutMode: "masonry", itemSelector: ".grid-item", percentPosition: true, stagger: 0, masonry: { columnWidth: ".grid-sizer" } });
-                        }
-                        isotopeObjs.push(_this);
-                    });
-                }
-            },
-            error: function (data) {
-                var output = '<div class="col-12"><span class=text-center>No Images Found</span></div>';
-                _this.append(output);
-            },
-        });
-    });
 
     if (typeof $.fn.magnificPopup === "function") {
         $(".modal-popup").magnificPopup({ type: "inline", preloader: false, blackbg: true });
@@ -1540,87 +1480,7 @@
             },
         });
     }
-    $(document).on("click", ".submit", function () {
-        var error = false,
-            _this = $(this),
-            formObj = _this.parents("form"),
-            emailFormat = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/,
-            urlformat = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/,
-            telFormat = /[0-9 -()+]+$/,
-            actionURL = formObj.attr("action"),
-            resultsObj = formObj.find(".form-results"),
-            grecaptchav3 = _this.attr("data-sitekey") || "",
-            redirectVal = formObj.find('[name="redirect"]').val();
-        formObj.find(".required").removeClass("is-invalid");
-        formObj.find(".required").each(function () {
-            var __this = $(this),
-                fieldVal = __this.val();
-            if (fieldVal == "" || fieldVal == undefined) {
-                error = true;
-                __this.addClass("is-invalid");
-            } else if (__this.attr("type") == "email" && !emailFormat.test(fieldVal)) {
-                error = true;
-                __this.addClass("is-invalid");
-            } else if (__this.attr("type") == "url" && !urlformat.test(fieldVal)) {
-                error = true;
-                __this.addClass("is-invalid");
-            } else if (__this.attr("type") == "tel" && !telFormat.test(fieldVal)) {
-                error = true;
-                __this.addClass("is-invalid");
-            }
-        });
-        var termsObj = formObj.find(".terms-condition");
-        if (termsObj.length) {
-            if (!termsObj.is(":checked")) {
-                error = true;
-                termsObj.addClass("is-invalid");
-            }
-        }
-        if (typeof grecaptcha !== "undefined" && grecaptcha !== null) {
-            if (formObj.find(".g-recaptcha").length) {
-                var gResponse = grecaptcha.getResponse();
-                if (!gResponse.length) {
-                    error = true;
-                    formObj.find(".g-recaptcha").addClass("is-invalid");
-                }
-            } else if (grecaptchav3 != "" && grecaptchav3 != undefined) {
-                grecaptcha.ready(function () {
-                    grecaptcha.execute(grecaptchav3, { action: "submit" }).then(function (token) { });
-                });
-            }
-        }
-        if (!error && actionURL != "" && actionURL != undefined) {
-            _this.addClass("loading");
-            $.ajax({
-                type: "POST",
-                url: actionURL,
-                data: formObj.serialize(),
-                success: function (result) {
-                    _this.removeClass("loading");
-                    if (redirectVal != "" && redirectVal != undefined) {
-                        window.location.href = redirectVal;
-                    } else {
-                        if (typeof result !== "undefined" && result !== null) {
-                            result = $.parseJSON(result);
-                        }
-                        formObj.find("input[type=text],input[type=url],input[type=email],input[type=tel],input[type=password],textarea").each(function () {
-                            $(this).val("");
-                            $(this).removeClass("is-invalid");
-                        });
-                        formObj.find(".g-recaptcha").removeClass("is-invalid");
-                        formObj.find("input[type=checkbox],input[type=radio]").prop("checked", false);
-                        if (formObj.find(".g-recaptcha").length) {
-                            grecaptcha.reset();
-                        }
-                        resultsObj.removeClass("alert-success").removeClass("alert-danger").hide();
-                        resultsObj.addClass(result.alert).html(result.message);
-                        resultsObj.removeClass("d-none").fadeIn("slow").delay(4000).fadeOut("slow");
-                    }
-                },
-            });
-        }
-        return false;
-    });
+
     $(document).on("blur", ".required", function () {
         var emailFormat = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/,
             telFormat = /[0-9 -()+]+$/,
@@ -1638,14 +1498,7 @@
             $(this).removeClass("is-invalid").addClass("is-valid");
         }
     });
-    $(document).on("click", ".terms-condition", function () {
-        var termsObj = $(this);
-        if (!termsObj.is(":checked")) {
-            termsObj.addClass("is-invalid");
-        } else {
-            termsObj.removeClass("is-invalid").addClass("is-valid");
-        }
-    });
+
     if ($(".rev_slider").length) {
         $(".rev_slider").each(function () {
             $(this).one("revolution.slide.onloaded", function () {

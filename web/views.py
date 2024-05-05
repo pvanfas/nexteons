@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.shortcuts import redirect, render
 
 from .forms import ContactForm
@@ -49,6 +50,8 @@ def contact(request):
         if form.is_valid():
             form.save()
             form = ContactForm()
+            # create a django message
+            messages.success(request, "Your message has been sent successfully.")
     context = {"is_contact": True, "form": form}
     return render(request, "web/contact.html", context)
 
