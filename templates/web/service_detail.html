@@ -59,7 +59,7 @@
                 data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [30, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;:0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
                 <h4 class="text-dark-gray fw-700 alt-font mb-20px d-block">{{service.title}}</h4>
                 <p>
-                    {{service.summary}}
+                    {{service.content|safe}}
                 </p>
   
                 <div class="cover-background p-7 border-radius-6px mb-60px md-mb-40px d-flex justify-content-end align-items-end sm-h-500px"

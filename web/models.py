@@ -22,6 +22,7 @@ class Service(models.Model):
     subtitle = models.CharField(max_length=100)
     description = models.TextField()
     summary = models.TextField()
+    content = CKEditor5Field("Content", config_name="extends", blank=True, null=True)
     image = models.ImageField(upload_to="service/")
 
     def get_absolute_url(self):
