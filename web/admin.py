@@ -1,7 +1,19 @@
 from django.contrib import admin
 from import_export.admin import ImportExportActionModelAdmin
 
-from .models import Blog, BlogCategory, Career, Client, Contact, FrequentlyAskedQuestion, Product, Service, Slider, Team, Testimonial
+from .models import (
+    Blog,
+    BlogCategory,
+    Career,
+    Client,
+    Contact,
+    FrequentlyAskedQuestion,
+    Product,
+    Service,
+    Slider,
+    Team,
+    Testimonial,
+)
 
 
 @admin.register(Slider)
