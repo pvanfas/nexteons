@@ -43,6 +43,7 @@ class Testimonial(models.Model):
 
 
 class Client(models.Model):
+    name = models.CharField(max_length=100)
     image = models.ImageField(upload_to="client/")
 
     def __str__(self):

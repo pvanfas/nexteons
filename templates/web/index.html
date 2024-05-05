@@ -592,8 +592,9 @@
                                 <div
                                     class="card border-0 border-radius-5px box-shadow-quadruple-large box-shadow-quadruple-large-hover">
                                     <div class="blog-image">
-                                        <a href="{{blog.get_absolute_url}}" class="d-block"><img
-                                                src="{{blog.image.url}}" alt /></a>
+                                        <a href="{{blog.get_absolute_url}}" class="d-block">
+                                            <img src="{{blog.image.url}}" alt style="height: 220px;width: 100%;object-fit: cover;" />
+                                        </a>
                                         <div class="blog-categories">
                                             <a href="{{blog.get_absolute_url}}"
                                                 class="categories-btn bg-white text-dark-gray text-dark-gray-hover text-uppercase fw-700">{{blog.category}}</a>
