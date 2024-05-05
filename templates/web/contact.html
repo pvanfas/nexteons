@@ -125,7 +125,7 @@
                     </div>
                 </div>
             </div>
-            <div class="container-fluid overflow-hidden position-relative pt-6 sm-pt-40px">
+            <div class="container-fluid overflow-hidden position-relative pt-0 sm-pt-0">
                 <img src="/static/web/images/demo-corporate-contact-bg-01.png"
                     class="position-absolute top-0 left-minus-300px z-index-minus-1"
                     data-bottom-top="transform: rotate(0deg) translateY(0)"
@@ -141,7 +141,7 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-xxl-6 col-xl-7 col-lg-11">
-                        <form action="https://craftohtml.themezaa.com/email-templates/contact-form.php" method="post"
+                        <form action="" method="post"
                             class="contact-form-style-03">
                             <div class="row justify-content-center"
                                 data-anime="{ &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;:0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
@@ -150,10 +150,7 @@
                                         your name*</label>
                                     <div class="position-relative form-group mb-25px">
                                         <span class="form-icon"><i class="bi bi-emoji-smile"></i></span>
-                                        <input
-                                            class="ps-0 border-radius-0px border-color-extra-medium-gray bg-transparent form-control required"
-                                            id="exampleInputEmail1" type="text" name="name"
-                                            placeholder="What's your good name?" />
+                                        {{ form.name }}
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -161,10 +158,7 @@
                                         address*</label>
                                     <div class="position-relative form-group mb-25px">
                                         <span class="form-icon"><i class="bi bi-envelope"></i></span>
-                                        <input
-                                            class="ps-0 border-radius-0px border-color-extra-medium-gray bg-transparent form-control required"
-                                            id="exampleInputEmail2" type="email" name="email"
-                                            placeholder="Enter your email address" />
+                                        {{form.email}}
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -172,10 +166,7 @@
                                         number</label>
                                     <div class="position-relative form-group mb-25px">
                                         <span class="form-icon"><i class="bi bi-telephone"></i></span>
-                                        <input
-                                            class="ps-0 border-radius-0px border-color-extra-medium-gray bg-transparent form-control"
-                                            id="exampleInputEmail3" type="tel" name="phone"
-                                            placeholder="Enter your phone number" />
+                                        {{form.phone}}
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -183,27 +174,20 @@
                                         class="form-label fw-600 text-dark-gray mb-0">Subject</label>
                                     <div class="position-relative form-group mb-25px">
                                         <span class="form-icon"><i class="bi bi-journals"></i></span>
-                                        <input
-                                            class="ps-0 border-radius-0px border-color-extra-medium-gray bg-transparent form-control"
-                                            id="exampleInputEmail4" type="text" name="subject"
-                                            placeholder="How can we help you?" />
+                                        {{form.subject}}
                                     </div>
                                 </div>
                                 <div class="col-12 mb-4">
                                     <label for="exampleInputEmail1" class="form-label fw-600 text-dark-gray mb-0">Your
                                         message</label>
                                     <div class="position-relative form-group form-textarea mb-0">
-                                        <textarea
-                                            class="ps-0 border-radius-0px border-color-extra-medium-gray bg-transparent form-control"
-                                            name="comment" placeholder="Describe about your project"
-                                            rows="4"></textarea>
+                                        {{form.message}}
                                         <span class="form-icon"><i class="bi bi-chat-square-dots"></i></span>
                                     </div>
                                 </div>
                                 <div class="col-xxl-6 col-lg-7 col-md-8">
                                     <p class="mb-0 fs-14 lh-24 text-center text-md-start">We are committed to protecting
-                                        your privacy. We will never collect information about you without your explicit
-                                        consent.</p>
+                                        your privacy. We will never sell your information.</p>
                                 </div>
                                 <div class="col-xxl-6 col-lg-5 col-md-4 text-center text-md-end sm-mt-25px">
                                     <input id="exampleInputEmail5" type="hidden" name="redirect" value>

@@ -2,49 +2,9 @@
 <html class="no-js" lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>Nexteons Technologies LLP: Trusted Software Partner for Your Business Success</title>
-
-    <!-- Primary Meta Tags -->
-    <title>Nexteons Technologies LLP: Trusted Software Partner for Your Business Success</title>
-    <meta name="title" content="Nexteons Technologies LLP: Trusted Software Partner for Your Business Success" />
-    <meta name="description" content="Nexteons Technologies LLP is your trusted partner for custom software development. We specialize in crafting solutions that seamlessly integrate with your existing infrastructure and workflows, empowering your business to thrive." />
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://metatags.io/" />
-    <meta property="og:title" content="Nexteons Technologies LLP: Trusted Software Partner for Your Business Success" />
-    <meta property="og:description" content="Nexteons Technologies LLP is your trusted partner for custom software development. We specialize in crafting solutions that seamlessly integrate with your existing infrastructure and workflows, empowering your business to thrive." />
-    <meta property="og:image" content="https://metatags.io/images/meta-tags.png" />
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://metatags.io/" />
-    <meta property="twitter:title" content="Nexteons Technologies LLP: Trusted Software Partner for Your Business Success" />
-    <meta property="twitter:description" content="Nexteons Technologies LLP is your trusted partner for custom software development. We specialize in crafting solutions that seamlessly integrate with your existing infrastructure and workflows, empowering your business to thrive." />
-    <meta property="twitter:image" content="https://metatags.io/images/meta-tags.png" />
-
-
-    <link rel="shortcut icon" href="/static/web/images/favicon.png">
-    <link rel="apple-touch-icon" href="/static/web/images/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/static/web/images/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/static/web/images/apple-touch-icon-114x114.png">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin>
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-
-    <link rel="stylesheet" type="text/css" href="/static/web/revolution/css/settings.css">
-    <link rel="stylesheet" type="text/css" href="/static/web/revolution/css/layers.css">
-    <link rel="stylesheet" type="text/css" href="/static/web/revolution/css/navigation.css">
-
-    <link rel="stylesheet" href="/static/web/css/vendors.min.css" />
-    <link rel="stylesheet" href="/static/web/css/icon.min.css" />
-    <link rel="stylesheet" href="/static/web/css/style.min.css" />
-    <link rel="stylesheet" href="/static/web/css/responsive.min.css" />
-    <link rel="stylesheet" href="/static/web/css/master.css" />
+    {% include 'web/partials/head.html' %}
 </head>
+
 
 <body data-mobile-nav-trigger-alignment="right" data-mobile-nav-style="modern" data-mobile-nav-bg-color="#242E45">
     <div class="box-layout">
@@ -58,18 +18,18 @@
                     data-version="5.3.1.6">
 
                     <ul>
-
-                        <li data-index="rs-01" data-transition="parallaxleft" data-slotamount="default"
+                        {% for slider in sliders %}
+                        <li data-index="rs-0{{forloop.counter}}" data-transition="fade" data-slotamount="default"
                             data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default"
                             data-easeout="default" data-masterspeed="1500" data-rotate="0" data-saveperformance="off"
                             data-title="Crossfit" data-param1 data-param2 data-param3 data-param4 data-param5
                             data-param6 data-param7 data-param8 data-param9 data-param10 data-description>
 
-                            <img src="/static/web/images/demo-corporate-main-slider-01.jpg" alt="Image"
+                            <img src="{{slider.image.url}}" alt="Image"
                                 data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"
                                 class="rev-slidebg" data-no-retina>
 
-                            <div class="tp-caption tp-shape tp-shapewrapper " id="slide-1-layer-01"
+                            <div class="tp-caption tp-shape tp-shapewrapper " id="slide-{{forloop.counter}}-layer-01"
                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
                                 data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
                                 data-width="full" data-height="full" data-whitespace="nowrap" data-type="shape"
@@ -81,7 +41,7 @@
 
 
                             <div class="tp-caption tp-shape tp-shapewrapper tp-resizeme bg-regal-blue border-radius-50"
-                                id="slide-1-layer-02" data-x="['center','center','center','center']"
+                                id="slide-{{forloop.counter}}-layer-02" data-x="['center','center','center','center']"
                                 data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
                                 data-voffset="['0','0','0','0']" data-width="['900','700','700','600']"
                                 data-height="['900','700','700','600']" data-whitespace="nowrap" data-type="shape"
@@ -94,7 +54,7 @@
 
 
                             <div class="tp-caption tp-shape tp-shapewrapper tp-resizeme bg-regal-blue border-radius-50"
-                                id="slide-1-layer-03" data-x="['center','center','center','center']"
+                                id="slide-{{forloop.counter}}-layer-03" data-x="['center','center','center','center']"
                                 data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
                                 data-voffset="['0','0','0','0']" data-width="['1200','1000','900','800']"
                                 data-height="['1200','1000','900','800']" data-whitespace="nowrap" data-type="shape"
@@ -106,9 +66,9 @@
                             </div>
 
 
-                            <div id="rrzm_638" class="rev_row_zone rev_row_zone_middle">
+                            <div id="rrzm_63{{forloop.counter}}" class="rev_row_zone rev_row_zone_middle">
 
-                                <div class="tp-caption  " id="slide-1-layer-04" data-x="['left','left','left','left']"
+                                <div class="tp-caption  " id="slide-{{forloop.counter}}-layer-04" data-x="['left','left','left','left']"
                                     data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
                                     data-voffset="['-426','-426','-426','-426']" data-width="none" data-height="none"
                                     data-whitespace="nowrap" data-type="row" data-columnbreak="3"
@@ -118,7 +78,7 @@
                                     data-paddingtop="[0,0,0,0]" data-paddingright="[100,75,50,30]"
                                     data-paddingbottom="[0,0,0,0]" data-paddingleft="[100,75,50,30]">
 
-                                    <div class="tp-caption" id="slide-1-layer-05" data-x="['left','left','left','left']"
+                                    <div class="tp-caption" id="slide-{{forloop.counter}}-layer-05" data-x="['left','left','left','left']"
                                         data-hoffset="['100','100','100','100']" data-y="['top','top','top','top']"
                                         data-voffset="['100','100','100','100']" data-width="none" data-height="none"
                                         data-whitespace="nowrap" data-type="column" data-responsive_offset="on"
@@ -127,7 +87,7 @@
                                         data-columnwidth="100%" data-verticalalign="top"
                                         data-textAlign="['center','center','center','center']">
 
-                                        <div class="tp-caption mx-auto text-uppercase" id="slide-1-layer-06"
+                                        <div class="tp-caption mx-auto text-uppercase" id="slide-{{forloop.counter}}-layer-06"
                                             data-x="['center','center','center','center']"
                                             data-hoffset="['0','0','0','0']"
                                             data-y="['middle','middle','middle','middle']"
@@ -145,11 +105,11 @@
                                             data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]"
                                             data-paddingbottom="[25,25,10,10]" data-paddingleft="[0,0,0,0]"
                                             style="word-break: initial;">
-                                            <i class="bi bi-award pe-5px icon-small"></i>Nexteons Technologies LLP
+                                            <i class="bi bi-award pe-5px icon-small"></i>{{slider.top_text}}
                                         </div>
 
 
-                                        <div class="tp-caption mx-auto" id="slide-1-layer-07"
+                                        <div class="tp-caption mx-auto" id="slide-{{forloop.counter}}-layer-07"
                                             data-x="['center','center','center','center']"
                                             data-hoffset="['0','0','0','0']"
                                             data-y="['middle','middle','middle','middle']"
@@ -167,11 +127,11 @@
                                             data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]"
                                             data-paddingbottom="[33,28,35,25]" data-paddingleft="[0,0,0,0]"
                                             style="word-break: initial; text-shadow: #0b1236 3px 3px 15px;">
-                                            Trusted Software Partner for Your Business Success
+                                            {{slider.main_text}}
                                         </div>
 
 
-                                        <div class="tp-caption mx-auto" id="slide-1-layer-08"
+                                        <div class="tp-caption mx-auto" id="slide-{{forloop.counter}}-layer-08"
                                             data-x="['center','center','center','center']"
                                             data-hoffset="['0','0','0','0']"
                                             data-y="['middle','middle','middle','middle']"
@@ -188,11 +148,11 @@
                                             data-textAlign="['center','center','center','center']"
                                             data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]"
                                             data-paddingbottom="[36,36,60,40]" data-paddingleft="[0,0,0,0]">
-                                            Nexteons Technologies LLP is your trusted partner for custom software development.
+                                            {{slider.description}}
                                         </div>
 
 
-                                        <div class="tp-caption tp-resizeme" id="slide-1-layer-09"
+                                        <div class="tp-caption tp-resizeme" id="slide-{{forloop.counter}}-layer-09"
                                             data-x="['center','center','center','center']"
                                             data-hoffset="['0','0','0','0']" data-y="['top','top','top','top']"
                                             data-voffset="['0','0','0','0']" data-width="auto" data-height="none"
@@ -203,10 +163,10 @@
                                             data-textAlign="['inherit','inherit','inherit','inherit']"
                                             data-paddingtop="[0,0,0,0]" data-paddingright="[75,70,65,60]"
                                             data-paddingbottom="[0,0,0,0]" data-paddingleft="[45,35,30,30]">
-                                            <a href="#"
-                                                class="btn btn-extra-large get-started-btn btn-rounded with-rounded btn-gradient-flamingo-amethyst-green btn-box-shadow">Get
-                                                started now<span class="bg-white text-base-color"><i
-                                                        class="fa-solid fa-arrow-right"></i></span></a>
+                                            <a href="{{slider.button_text}}" class="btn btn-extra-large get-started-btn btn-rounded with-rounded btn-gradient-flamingo-amethyst-green btn-box-shadow">
+                                                {{slider.button_text}}
+                                                <span class="bg-white text-base-color"><i class="fa-solid fa-arrow-right"></i></span>
+                                            </a>
                                         </div>
 
                                     </div>
@@ -217,7 +177,7 @@
 
 
                             <div class="tp-caption tp-shape tp-shapewrapper tp-resizeme bg-base-color border-radius-50"
-                                id="slide-1-layer-10" data-x="['center','center','center','center']"
+                                id="slide-{{forloop.counter}}-layer-10" data-x="['center','center','center','center']"
                                 data-hoffset="['510','410','310','0']" data-y="['middle','middle','middle','middle']"
                                 data-voffset="['-320','-250','-250','0']" data-width="['122','122','120','120']"
                                 data-height="['122','122','120','120']" data-visibility="['on','on','off','off']"
@@ -230,7 +190,7 @@
                             </div>
 
 
-                            <div class="tp-caption d-inline-block" id="slide-1-layer-11"
+                            <div class="tp-caption d-inline-block" id="slide-{{forloop.counter}}-layer-11"
                                 data-x="['center','center','center','center']" data-hoffset="['510','410','310','0']"
                                 data-y="['middle','middle','middle','middle']" data-voffset="['-305','-250','-250','0']"
                                 data-visibility="['on','on','off','off']" data-fontsize="['13','13','13','13']"
@@ -245,466 +205,30 @@
                                 data-paddingright="[0,0,0,0]" data-paddingbottom="[33,0,0,0]"
                                 data-paddingleft="[0,0,0,0]" style="word-break: initial;">
                                 <i class="bi bi-patch-check-fill icon-extra-medium d-block pb-10px"></i> <span
-                                    class="d-block text-uppercase">Decided quality</span>
+                                    class="d-block text-uppercase">Quality Verified</span>
                             </div>
 
                         </li>
-                        <li data-index="rs-02" data-transition="parallaxleft" data-slotamount="default"
-                            data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default"
-                            data-easeout="default" data-masterspeed="1500" data-rotate="0" data-saveperformance="off"
-                            data-title="Crossfit" data-param1 data-param2 data-param3 data-param4 data-param5
-                            data-param6 data-param7 data-param8 data-param9 data-param10 data-description>
-
-                            <img src="/static/web/images/demo-corporate-main-slider-02.jpg" alt="Image"
-                                data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"
-                                class="rev-slidebg" data-no-retina>
-
-                            <div class="tp-caption tp-shape tp-shapewrapper " id="slide-2-layer-01"
-                                data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
-                                data-width="full" data-height="full" data-whitespace="nowrap" data-type="shape"
-                                data-basealign="slide" data-responsive_offset="off" data-responsive="off"
-                                data-frames="[{&quot;delay&quot;:0,&quot;speed&quot;:1000,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power4.easeInOut&quot;},
-                                     {&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1000,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;opacity:0;&quot;,&quot;ease&quot;:&quot;Power4.easeInOut&quot;}]"
-                                style="background:rgba(22,35,63,0.1); z-index: 0;">
-                            </div>
-
-
-                            <div class="tp-caption tp-shape tp-shapewrapper tp-resizeme bg-regal-blue border-radius-50"
-                                id="slide-2-layer-02" data-x="['center','center','center','center']"
-                                data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
-                                data-voffset="['0','0','0','0']" data-width="['900','700','700','600']"
-                                data-height="['900','700','700','600']" data-whitespace="nowrap" data-type="shape"
-                                data-responsive_offset="on"
-                                data-frames="[{&quot;delay&quot;:1000,&quot;speed&quot;:1000,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;x:0px;y:50px;rX:0deg;rY:0deg;rZ:0deg;sX:0.5;sY:0.5;opacity:0;&quot;,&quot;to&quot;:&quot;o:0.5;&quot;,&quot;ease&quot;:&quot;Back.easeOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
-                                data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]" style="z-index: 0;">
-                            </div>
-
-
-                            <div class="tp-caption tp-shape tp-shapewrapper tp-resizeme bg-regal-blue border-radius-50"
-                                id="slide-2-layer-03" data-x="['center','center','center','center']"
-                                data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
-                                data-voffset="['0','0','0','0']" data-width="['1200','1000','900','800']"
-                                data-height="['1200','1000','900','800']" data-whitespace="nowrap" data-type="shape"
-                                data-responsive_offset="on"
-                                data-frames="[{&quot;delay&quot;:1300,&quot;speed&quot;:1000,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;x:0px;y:50px;rX:0deg;rY:0deg;rZ:0deg;sX:0.5;sY:0.5;opacity:0;&quot;,&quot;to&quot;:&quot;o:0.3;&quot;,&quot;ease&quot;:&quot;Back.easeOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
-                                data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]" style="z-index: 0;">
-                            </div>
-
-
-                            <div id="rrzm_639" class="rev_row_zone rev_row_zone_middle">
-
-                                <div class="tp-caption  " id="slide-2-layer-04" data-x="['left','left','left','left']"
-                                    data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
-                                    data-voffset="['-426','-426','-426','-426']" data-width="none" data-height="none"
-                                    data-whitespace="nowrap" data-type="row" data-columnbreak="3"
-                                    data-responsive_offset="on" data-responsive="off"
-                                    data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:300,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
-                                    data-textAlign="['inherit','inherit','inherit','inherit']"
-                                    data-paddingtop="[0,0,0,0]" data-paddingright="[100,75,50,30]"
-                                    data-paddingbottom="[0,0,0,0]" data-paddingleft="[100,75,50,30]">
-
-                                    <div class="tp-caption" id="slide-2-layer-05" data-x="['left','left','left','left']"
-                                        data-hoffset="['100','100','100','100']" data-y="['top','top','top','top']"
-                                        data-voffset="['100','100','100','100']" data-width="none" data-height="none"
-                                        data-whitespace="nowrap" data-type="column" data-responsive_offset="on"
-                                        data-responsive="off"
-                                        data-frames="[{&quot;delay&quot;:&quot;+0&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
-                                        data-columnwidth="100%" data-verticalalign="top"
-                                        data-textAlign="['center','center','center','center']">
-
-                                        <div class="tp-caption mx-auto text-uppercase" id="slide-2-layer-06"
-                                            data-x="['center','center','center','center']"
-                                            data-hoffset="['0','0','0','0']"
-                                            data-y="['middle','middle','middle','middle']"
-                                            data-voffset="['0','0','0','0']" data-fontsize="['13','13','13','13']"
-                                            data-lineheight="['20','20','20','20']"
-                                            data-fontweight="['500','500','500','500']"
-                                            data-letterspacing="['1','1','1','1']"
-                                            data-color="['#ffffff','#ffffff','#ffffff','#ffffff']"
-                                            data-width="['800','auto','auto','auto']" data-height="auto"
-                                            data-whitespace="normal" data-basealign="grid" data-type="text"
-                                            data-responsive_offset="off" data-verticalalign="middle"
-                                            data-responsive="off"
-                                            data-frames="[{&quot;delay&quot;:2500,&quot;speed&quot;:800,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:-50px;opacity:0;fb:20px;&quot;,&quot;to&quot;:&quot;o:1;fb:0;&quot;,&quot;ease&quot;:&quot;power3.inOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;opacity:0;&quot;,&quot;ease&quot;:&quot;power3.inOut&quot;}]"
-                                            data-textAlign="['center','center','center','center']"
-                                            data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]"
-                                            data-paddingbottom="[25,25,10,10]" data-paddingleft="[0,0,0,0]"
-                                            style="word-break: initial;">
-                                            <i class="bi bi-award pe-5px icon-small"></i>Unleash Potential
-                                        </div>
-
-
-                                        <div class="tp-caption mx-auto" id="slide-2-layer-07"
-                                            data-x="['center','center','center','center']"
-                                            data-hoffset="['0','0','0','0']"
-                                            data-y="['middle','middle','middle','middle']"
-                                            data-voffset="['0','0','0','0']" data-fontsize="['75','60','70','50']"
-                                            data-lineheight="['70','65','75','55']"
-                                            data-fontweight="['700','700','700','700']"
-                                            data-letterspacing="['-2','-2','-2','0']"
-                                            data-color="['#ffffff','#ffffff','#ffffff','#ffffff']"
-                                            data-width="['700','600','600','auto']" data-height="auto"
-                                            data-whitespace="normal" data-basealign="grid" data-type="text"
-                                            data-responsive_offset="off" data-verticalalign="middle"
-                                            data-responsive="on"
-                                            data-frames="[{&quot;delay&quot;:&quot;1500&quot;,&quot;split&quot;:&quot;chars&quot;,&quot;splitdelay&quot;:0.03,&quot;speed&quot;:800,&quot;split_direction&quot;:&quot;middletoedge&quot;,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;x:50px;opacity:0;fb:10px;&quot;,&quot;to&quot;:&quot;o:1;fb:0;&quot;,&quot;ease&quot;:&quot;Power4.easeOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:100,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;opacity:0;fb:0;&quot;,&quot;ease&quot;:&quot;Power4.easeOut&quot;}]"
-                                            data-textAlign="['center','center','center','center']"
-                                            data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]"
-                                            data-paddingbottom="[33,28,35,25]" data-paddingleft="[0,0,0,0]"
-                                            style="word-break: initial; text-shadow: #0b1236 3px 3px 15px;">
-                                            Tech Solutions for Business Growth
-                                        </div>
-
-
-                                        <div class="tp-caption mx-auto" id="slide-2-layer-08"
-                                            data-x="['center','center','center','center']"
-                                            data-hoffset="['0','0','0','0']"
-                                            data-y="['middle','middle','middle','middle']"
-                                            data-voffset="['0','0','0','0']" data-fontsize="['20','20','24','20']"
-                                            data-lineheight="['36','36','40','30']"
-                                            data-fontweight="['300','300','300','300']"
-                                            data-letterspacing="['0','0','0','0']"
-                                            data-color="['#ffffff','#ffffff','#ffffff','#ffffff']"
-                                            data-width="['500','500','auto','auto']" data-height="auto"
-                                            data-whitespace="normal" data-basealign="grid" data-type="text"
-                                            data-responsive_offset="off" data-verticalalign="middle"
-                                            data-responsive="on"
-                                            data-frames="[{&quot;delay&quot;:2500,&quot;speed&quot;:800,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:50px;opacity:0;fb:20px;&quot;,&quot;to&quot;:&quot;o:0.6;fb:0;&quot;,&quot;ease&quot;:&quot;power3.inOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;opacity:0;&quot;,&quot;ease&quot;:&quot;power3.inOut&quot;}]"
-                                            data-textAlign="['center','center','center','center']"
-                                            data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]"
-                                            data-paddingbottom="[36,36,60,40]" data-paddingleft="[0,0,0,0]">
-                                            Nexteons: Empowering Business with Innovation.
-                                        </div>
-
-
-                                        <div class="tp-caption tp-resizeme" id="slide-2-layer-09"
-                                            data-x="['center','center','center','center']"
-                                            data-hoffset="['0','0','0','0']" data-y="['top','top','top','top']"
-                                            data-voffset="['0','0','0','0']" data-width="auto" data-height="none"
-                                            data-whitespace="nowrap" data-fontsize="['18','16','16','16']"
-                                            data-lineheight="['70','55','55','55']" data-type="text"
-                                            data-responsive_offset="off" data-responsive="off"
-                                            data-frames="[{&quot;delay&quot;:3000,&quot;speed&quot;:1000,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:100px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
-                                            data-textAlign="['inherit','inherit','inherit','inherit']"
-                                            data-paddingtop="[0,0,0,0]" data-paddingright="[75,70,65,60]"
-                                            data-paddingbottom="[0,0,0,0]" data-paddingleft="[45,35,30,30]">
-                                            <a href="#"
-                                                class="btn btn-extra-large get-started-btn btn-rounded with-rounded btn-gradient-flamingo-amethyst-green btn-box-shadow">Get
-                                                started now<span class="bg-white text-base-color"><i
-                                                        class="fa-solid fa-arrow-right"></i></span></a>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="tp-caption tp-shape tp-shapewrapper tp-resizeme bg-base-color border-radius-50"
-                                id="slide-2-layer-10" data-x="['center','center','center','center']"
-                                data-hoffset="['510','410','310','0']" data-y="['middle','middle','middle','middle']"
-                                data-voffset="['-320','-250','-250','0']" data-width="['122','122','120','120']"
-                                data-height="['122','122','120','120']" data-visibility="['on','on','off','off']"
-                                data-whitespace="nowrap" data-basealign="grid" data-type="shape"
-                                data-responsive_offset="on"
-                                data-frames="[{&quot;delay&quot;:3500,&quot;speed&quot;:1000,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;x:0px;y:50px;rX:0deg;rY:0deg;rZ:0deg;sX:0.5;sY:0.5;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Back.easeOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
-                                data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]" style="z-index: 0;">
-                            </div>
-
-
-                            <div class="tp-caption d-inline-block" id="slide-2-layer-11"
-                                data-x="['center','center','center','center']" data-hoffset="['510','410','310','0']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['-305','-250','-250','0']"
-                                data-visibility="['on','on','off','off']" data-fontsize="['13','13','13','13']"
-                                data-lineheight="['16','16','16','16']" data-fontweight="['500','600','600','600']"
-                                data-letterspacing="['0','0','0','0']"
-                                data-color="['#ffffff','#ffffff','#ffffff','#ffffff']"
-                                data-width="['100','100','100','100']" data-height="auto" data-whitespace="normal"
-                                data-basealign="grid" data-type="text" data-responsive_offset="on"
-                                data-verticalalign="middle" data-responsive="on"
-                                data-frames="[{&quot;delay&quot;:3700,&quot;speed&quot;:1000,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;x:0px;y:50px;rX:0deg;rY:0deg;rZ:0deg;sX:0.5;sY:0.5;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Back.easeOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
-                                data-textAlign="['center','center','center','center']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[33,0,0,0]"
-                                data-paddingleft="[0,0,0,0]" style="word-break: initial;">
-                                <i class="bi bi-patch-check-fill icon-extra-medium d-block pb-10px"></i> <span
-                                    class="d-block text-uppercase">Decided quality</span>
-                            </div>
-
-                        </li>
-                        <li data-index="rs-03" data-transition="parallaxleft" data-slotamount="default"
-                            data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default"
-                            data-easeout="default" data-masterspeed="1500" data-rotate="0" data-saveperformance="off"
-                            data-title="Crossfit" data-param1 data-param2 data-param3 data-param4 data-param5
-                            data-param6 data-param7 data-param8 data-param9 data-param10 data-description>
-
-                            <img src="/static/web/images/demo-corporate-main-slider-03.jpg" alt="Image"
-                                data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"
-                                class="rev-slidebg" data-no-retina>
-
-                            <div class="tp-caption tp-shape tp-shapewrapper " id="slide-3-layer-01"
-                                data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
-                                data-width="full" data-height="full" data-whitespace="nowrap" data-type="shape"
-                                data-basealign="slide" data-responsive_offset="off" data-responsive="off"
-                                data-frames="[{&quot;delay&quot;:0,&quot;speed&quot;:1000,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power4.easeInOut&quot;},
-                                     {&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1000,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;opacity:0;&quot;,&quot;ease&quot;:&quot;Power4.easeInOut&quot;}]"
-                                style="background:rgba(22,35,63,0.1); z-index: 0;">
-                            </div>
-
-
-                            <div class="tp-caption tp-shape tp-shapewrapper tp-resizeme bg-regal-blue border-radius-50"
-                                id="slide-3-layer-02" data-x="['center','center','center','center']"
-                                data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
-                                data-voffset="['0','0','0','0']" data-width="['900','700','700','600']"
-                                data-height="['900','700','700','600']" data-whitespace="nowrap" data-type="shape"
-                                data-responsive_offset="on"
-                                data-frames="[{&quot;delay&quot;:1000,&quot;speed&quot;:1000,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;x:0px;y:50px;rX:0deg;rY:0deg;rZ:0deg;sX:0.5;sY:0.5;opacity:0;&quot;,&quot;to&quot;:&quot;o:0.5;&quot;,&quot;ease&quot;:&quot;Back.easeOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
-                                data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]" style="z-index: 0;">
-                            </div>
-
-
-                            <div class="tp-caption tp-shape tp-shapewrapper tp-resizeme bg-regal-blue border-radius-50"
-                                id="slide-3-layer-03" data-x="['center','center','center','center']"
-                                data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
-                                data-voffset="['0','0','0','0']" data-width="['1200','1000','900','800']"
-                                data-height="['1200','1000','900','800']" data-whitespace="nowrap" data-type="shape"
-                                data-responsive_offset="on"
-                                data-frames="[{&quot;delay&quot;:1300,&quot;speed&quot;:1000,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;x:0px;y:50px;rX:0deg;rY:0deg;rZ:0deg;sX:0.5;sY:0.5;opacity:0;&quot;,&quot;to&quot;:&quot;o:0.3;&quot;,&quot;ease&quot;:&quot;Back.easeOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
-                                data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]" style="z-index: 0;">
-                            </div>
-
-
-                            <div id="rrzm_640" class="rev_row_zone rev_row_zone_middle">
-
-                                <div class="tp-caption  " id="slide-3-layer-04" data-x="['left','left','left','left']"
-                                    data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
-                                    data-voffset="['-426','-426','-426','-426']" data-width="none" data-height="none"
-                                    data-whitespace="nowrap" data-type="row" data-columnbreak="3"
-                                    data-responsive_offset="on" data-responsive="off"
-                                    data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:300,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
-                                    data-textAlign="['inherit','inherit','inherit','inherit']"
-                                    data-paddingtop="[0,0,0,0]" data-paddingright="[100,75,50,30]"
-                                    data-paddingbottom="[0,0,0,0]" data-paddingleft="[100,75,50,30]">
-
-                                    <div class="tp-caption" id="slide-3-layer-05" data-x="['left','left','left','left']"
-                                        data-hoffset="['100','100','100','100']" data-y="['top','top','top','top']"
-                                        data-voffset="['100','100','100','100']" data-width="none" data-height="none"
-                                        data-whitespace="nowrap" data-type="column" data-responsive_offset="on"
-                                        data-responsive="off"
-                                        data-frames="[{&quot;delay&quot;:&quot;+0&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
-                                        data-columnwidth="100%" data-verticalalign="top"
-                                        data-textAlign="['center','center','center','center']">
-
-                                        <div class="tp-caption mx-auto text-uppercase" id="slide-3-layer-06"
-                                            data-x="['center','center','center','center']"
-                                            data-hoffset="['0','0','0','0']"
-                                            data-y="['middle','middle','middle','middle']"
-                                            data-voffset="['0','0','0','0']" data-fontsize="['13','13','13','13']"
-                                            data-lineheight="['20','20','20','20']"
-                                            data-fontweight="['500','500','500','500']"
-                                            data-letterspacing="['1','1','1','1']"
-                                            data-color="['#ffffff','#ffffff','#ffffff','#ffffff']"
-                                            data-width="['800','auto','auto','auto']" data-height="auto"
-                                            data-whitespace="normal" data-basealign="grid" data-type="text"
-                                            data-responsive_offset="off" data-verticalalign="middle"
-                                            data-responsive="off"
-                                            data-frames="[{&quot;delay&quot;:2500,&quot;speed&quot;:800,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:-50px;opacity:0;fb:20px;&quot;,&quot;to&quot;:&quot;o:1;fb:0;&quot;,&quot;ease&quot;:&quot;power3.inOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;opacity:0;&quot;,&quot;ease&quot;:&quot;power3.inOut&quot;}]"
-                                            data-textAlign="['center','center','center','center']"
-                                            data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]"
-                                            data-paddingbottom="[25,25,10,10]" data-paddingleft="[0,0,0,0]"
-                                            style="word-break: initial;">
-                                            <i class="bi bi-award pe-5px icon-small"></i>On demand live support
-                                        </div>
-
-
-                                        <div class="tp-caption mx-auto" id="slide-3-layer-07"
-                                            data-x="['center','center','center','center']"
-                                            data-hoffset="['0','0','0','0']"
-                                            data-y="['middle','middle','middle','middle']"
-                                            data-voffset="['0','0','0','0']" data-fontsize="['75','60','70','50']"
-                                            data-lineheight="['70','65','75','55']"
-                                            data-fontweight="['700','700','700','700']"
-                                            data-letterspacing="['-2','-2','-2','0']"
-                                            data-color="['#ffffff','#ffffff','#ffffff','#ffffff']"
-                                            data-width="['700','600','600','auto']" data-height="auto"
-                                            data-whitespace="normal" data-basealign="grid" data-type="text"
-                                            data-responsive_offset="off" data-verticalalign="middle"
-                                            data-responsive="on"
-                                            data-frames="[{&quot;delay&quot;:&quot;1500&quot;,&quot;split&quot;:&quot;chars&quot;,&quot;splitdelay&quot;:0.03,&quot;speed&quot;:800,&quot;split_direction&quot;:&quot;middletoedge&quot;,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;x:50px;opacity:0;fb:10px;&quot;,&quot;to&quot;:&quot;o:1;fb:0;&quot;,&quot;ease&quot;:&quot;Power4.easeOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:100,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;opacity:0;fb:0;&quot;,&quot;ease&quot;:&quot;Power4.easeOut&quot;}]"
-                                            data-textAlign="['center','center','center','center']"
-                                            data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]"
-                                            data-paddingbottom="[33,28,35,25]" data-paddingleft="[0,0,0,0]"
-                                            style="word-break: initial; text-shadow: #0b1236 3px 3px 15px;">
-                                            Delivering creative digital products
-                                        </div>
-
-
-                                        <div class="tp-caption mx-auto" id="slide-3-layer-08"
-                                            data-x="['center','center','center','center']"
-                                            data-hoffset="['0','0','0','0']"
-                                            data-y="['middle','middle','middle','middle']"
-                                            data-voffset="['0','0','0','0']" data-fontsize="['20','20','24','20']"
-                                            data-lineheight="['36','36','40','30']"
-                                            data-fontweight="['300','300','300','300']"
-                                            data-letterspacing="['0','0','0','0']"
-                                            data-color="['#ffffff','#ffffff','#ffffff','#ffffff']"
-                                            data-width="['500','500','auto','auto']" data-height="auto"
-                                            data-whitespace="normal" data-basealign="grid" data-type="text"
-                                            data-responsive_offset="off" data-verticalalign="middle"
-                                            data-responsive="on"
-                                            data-frames="[{&quot;delay&quot;:2500,&quot;speed&quot;:800,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:50px;opacity:0;fb:20px;&quot;,&quot;to&quot;:&quot;o:0.6;fb:0;&quot;,&quot;ease&quot;:&quot;power3.inOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;opacity:0;&quot;,&quot;ease&quot;:&quot;power3.inOut&quot;}]"
-                                            data-textAlign="['center','center','center','center']"
-                                            data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]"
-                                            data-paddingbottom="[36,36,60,40]" data-paddingleft="[0,0,0,0]">
-                                            We're a fully dedicated corporate service agency collaborating with brands
-                                            all over the world.
-                                        </div>
-
-
-                                        <div class="tp-caption tp-resizeme" id="slide-3-layer-09"
-                                            data-x="['center','center','center','center']"
-                                            data-hoffset="['0','0','0','0']" data-y="['top','top','top','top']"
-                                            data-voffset="['0','0','0','0']" data-width="auto" data-height="none"
-                                            data-whitespace="nowrap" data-fontsize="['18','16','16','16']"
-                                            data-lineheight="['70','55','55','55']" data-type="text"
-                                            data-responsive_offset="off" data-responsive="off"
-                                            data-frames="[{&quot;delay&quot;:3000,&quot;speed&quot;:1000,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:100px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
-                                            data-textAlign="['inherit','inherit','inherit','inherit']"
-                                            data-paddingtop="[0,0,0,0]" data-paddingright="[75,70,65,60]"
-                                            data-paddingbottom="[0,0,0,0]" data-paddingleft="[45,35,30,30]">
-                                            <a href="#"
-                                                class="btn btn-extra-large get-started-btn btn-rounded with-rounded btn-gradient-flamingo-amethyst-green btn-box-shadow">Get
-                                                started now<span class="bg-white text-base-color"><i
-                                                        class="fa-solid fa-arrow-right"></i></span></a>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="tp-caption tp-shape tp-shapewrapper tp-resizeme bg-base-color border-radius-50"
-                                id="slide-3-layer-10" data-x="['center','center','center','center']"
-                                data-hoffset="['510','410','310','0']" data-y="['middle','middle','middle','middle']"
-                                data-voffset="['-320','-250','-250','0']" data-width="['122','122','120','120']"
-                                data-height="['122','122','120','120']" data-visibility="['on','on','off','off']"
-                                data-whitespace="nowrap" data-basealign="grid" data-type="shape"
-                                data-responsive_offset="on"
-                                data-frames="[{&quot;delay&quot;:3500,&quot;speed&quot;:1000,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;x:0px;y:50px;rX:0deg;rY:0deg;rZ:0deg;sX:0.5;sY:0.5;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Back.easeOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
-                                data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-                                data-paddingleft="[0,0,0,0]" style="z-index: 0;">
-                            </div>
-
-
-                            <div class="tp-caption d-inline-block" id="slide-3-layer-11"
-                                data-x="['center','center','center','center']" data-hoffset="['510','410','310','0']"
-                                data-y="['middle','middle','middle','middle']" data-voffset="['-305','-250','-250','0']"
-                                data-visibility="['on','on','off','off']" data-fontsize="['13','13','13','13']"
-                                data-lineheight="['16','16','16','16']" data-fontweight="['500','600','600','600']"
-                                data-letterspacing="['0','0','0','0']"
-                                data-color="['#ffffff','#ffffff','#ffffff','#ffffff']"
-                                data-width="['100','100','100','100']" data-height="auto" data-whitespace="normal"
-                                data-basealign="grid" data-type="text" data-responsive_offset="on"
-                                data-verticalalign="middle" data-responsive="on"
-                                data-frames="[{&quot;delay&quot;:3700,&quot;speed&quot;:1000,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;x:0px;y:50px;rX:0deg;rY:0deg;rZ:0deg;sX:0.5;sY:0.5;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Back.easeOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]"
-                                data-textAlign="['center','center','center','center']" data-paddingtop="[0,0,0,0]"
-                                data-paddingright="[0,0,0,0]" data-paddingbottom="[33,0,0,0]"
-                                data-paddingleft="[0,0,0,0]" style="word-break: initial;">
-                                <i class="bi bi-patch-check-fill icon-extra-medium d-block pb-10px"></i> <span
-                                    class="d-block text-uppercase">Decided quality</span>
-                            </div>
-
-                        </li>
+                        {% endfor %}
                     </ul>
-                    <div class="tp-bannertimer"
-                        style="height: 10px; background-color: rgba(0, 0, 0, 0.10); z-index: 98"></div>
+
+                    <div class="tp-bannertimer" style="height: 10px; background-color: rgba(0, 0, 0, 0.10); z-index: 98"></div>
                 </div>
             </div>
         </section>
-
-
-        <section class="p-0 border-bottom border-color-extra-medium-gray">
-            <div class="container">
-                <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2 justify-content-center"
-                    data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateX&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 800, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 500, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-
-                    <div
-                        class="col pt-35px pb-35px md-pb-0 text-dark-gray border-end border-color-extra-medium-gray sm-border-end-0">
-                        <div
-                            class="d-flex flex-column flex-lg-row align-items-center justify-content-center text-center text-lg-start">
-                            <div class="flex-shrink-0 me-15px md-me-0">
-                                <h2 class="mb-0 fw-800">99<sup class="fs-24">%</sup></h2>
-                            </div>
-                            <div>
-                                <span class="lh-24 fw-600 d-block">Track and analyze <br />business reports.</span>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div
-                        class="col pt-35px pb-35px md-pb-0 text-dark-gray border-end border-color-extra-medium-gray sm-border-end-0">
-                        <div
-                            class="d-flex flex-column flex-lg-row align-items-center justify-content-center text-center text-lg-start">
-                            <div class="flex-shrink-0 me-15px md-me-0">
-                                <h2 class="mb-0 fw-800 ls-minus-3px">4.98</h2>
-                            </div>
-                            <div>
-                                <div class="review-star-icon fs-20 d-inline-block text-gradient-orange-sky-blue">
-                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                        class="bi bi-star-fill"></i>
-                                </div>
-                                <span class="lh-24 fw-600 d-block">Best rated agency</span>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col pt-35px pb-35px text-dark-gray">
-                        <div
-                            class="d-flex flex-column flex-lg-row align-items-center justify-content-center text-center text-lg-start">
-                            <div class="flex-shrink-0 me-15px md-me-0">
-                                <h2 class="mb-0 fw-800">98<sup class="fs-24">%</sup></h2>
-                            </div>
-                            <div>
-                                <span class="lh-24 fw-600 d-block">Genuine repeated <br />happy customers.</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
 
         <section>
             <div class="container">
                 <div class="row justify-content-center align-items-center mb-6 sm-pb-9">
-                    <div class="col-lg-6 col-md-9 position-relative md-mb-15 text-center text-lg-start"
+                    <div class="col-lg-5 col-md-9 position-relative md-mb-15 text-center text-lg-start"
                         data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 15, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
                         <div class="absolute-middle-center z-index-9 counter-style-02 text-center">
                             <span
-                                class="fs-160 fw-800 text-dark-gray ls-minus-10px xs-ls-minus-5px position-relative lg-fs-130 xs-fs-75">10<sub
+                                class="fs-160 fw-800 text-dark-gray ls-minus-10px xs-ls-minus-5px position-relative lg-fs-130 xs-fs-75">08<sub
                                     class="align-top fs-80 lg-fs-70 text-dark-gray position-relative top-minus-3px">+</sub></span>
                             <span
                                 class="d-block mx-auto fs-20 fw-500 lh-26 w-70 text-center text-dark-gray xs-w-100">Years
-                                working experience</span>
+                                in the Industry</span>
                         </div>
                         <img src="/static/web/images/demo-corporate-03.png" alt>
                         <img src="/static/web/images/demo-corporate-01.png"
@@ -716,12 +240,12 @@
                             data-bottom-top="transform: translateY(-50px)" data-top-bottom="transform: translateY(50px)"
                             alt>
                     </div>
-                    <div class="col-lg-6 ps-6 text-center text-lg-start lg-ps-15px"
+                    <div class="col-lg-7 ps-6 text-center text-lg-start lg-ps-15px"
                         data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [30, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
                         <span
                             class="ps-25px pe-25px mb-20px text-uppercase text-base-color fs-14 lh-42px fw-700 border-radius-100px bg-gradient-very-light-gray-transparent d-inline-block">About Us</span>
                         <h3 class="text-dark-gray about-title fw-700 ls-minus-1px">Empowering Industries Through Innovative Technology Solutions</h3>
-                        <p class="w-80 xl-w-90 lg-w-100 mb-40px sm-mb-25px">Nexteons is a leading technology solutions provider with a team of talented technology experts who possess vast industry experience in various domains such as Retail, Manufacturing, Healthcare, Health Insurance, Pharmaceuticals, Logistics, Courier, Calibration & Testing Labs, as well as expertise in Business Analytics, Machine Learning, and other advanced technologies. Established with the vision of delivering innovative and reliable technology solutions, Nexteons has partnered with numerous resellers in the Middle East, providing an extensive range of products and services.</p>
+                        <p class="lg-w-100 mb-40px sm-mb-25px">Nexteons is a leading technology solutions provider with a team of talented technology experts who possess vast industry experience in various domains such as Retail, Manufacturing, Healthcare, Health Insurance, Pharmaceuticals, Logistics, Courier, Calibration & Testing Labs, as well as expertise in Business Analytics, Machine Learning, and other advanced technologies. Established with the vision of delivering innovative and reliable technology solutions, Nexteons has partnered with numerous resellers in the Middle East, providing an extensive range of products and services.</p>
                         <a href="{% url 'web:about' %}"
                             class="btn btn-large btn-dark-gray btn-hover-animation-switch btn-box-shadow btn-rounded me-25px xs-me-0">
                             <span>
@@ -740,7 +264,17 @@
 
                     <div class="col text-center sm-mb-30px">
                         <h2 class="vertical-counter d-inline-flex text-dark-gray fw-800 mb-0 ls-minus-3px position-relative z-index-0"
-                            data-to="500">
+                            data-to="8">
+                            <span class="text-highlight position-absolute bottom-9px w-100"><span
+                                    class="bg-gradient-flamingo-amethyst-green h-10px opacity-2"></span></span>
+                        </h2> <sup class="fs-24"><b>+</b></sup>
+                        <span class="d-block fs-14 fw-700 text-uppercase text-dark-gray">Years of Experience</span>
+                    </div>
+
+
+                    <div class="col text-center sm-mb-30px">
+                        <h2 class="vertical-counter d-inline-flex text-dark-gray fw-800 mb-0 ls-minus-3px position-relative z-index-0"
+                            data-to="100">
                             <span class="text-highlight position-absolute bottom-9px w-100"><span
                                     class="bg-gradient-flamingo-amethyst-green h-10px opacity-2"></span></span>
                         </h2> <sup class="fs-24"><b>+</b></sup>
@@ -750,17 +284,7 @@
 
                     <div class="col text-center sm-mb-30px">
                         <h2 class="vertical-counter d-inline-flex text-dark-gray fw-800 mb-0 ls-minus-3px position-relative z-index-0"
-                            data-to="100">
-                            <span class="text-highlight position-absolute bottom-9px w-100"><span
-                                    class="bg-gradient-flamingo-amethyst-green h-10px opacity-2"></span></span>
-                        </h2> <sup class="fs-24"><b>%</b></sup>
-                        <span class="d-block fs-14 fw-700 text-uppercase text-dark-gray">Client Satisfaction</span>
-                    </div>
-
-
-                    <div class="col text-center sm-mb-30px">
-                        <h2 class="vertical-counter d-inline-flex text-dark-gray fw-800 mb-0 ls-minus-3px position-relative z-index-0"
-                            data-to="50">
+                            data-to="10">
                             <span class="text-highlight position-absolute bottom-9px w-100"><span
                                     class="bg-gradient-flamingo-amethyst-green h-10px opacity-2"></span></span>
                         </h2> <sup class="fs-24"><b>+</b></sup>
@@ -770,7 +294,7 @@
 
                     <div class="col text-center">
                         <h2 class="vertical-counter d-inline-flex text-dark-gray fw-800 mb-0 ls-minus-3px position-relative z-index-0"
-                            data-to="10">
+                            data-to="8">
                             <span class="text-highlight position-absolute bottom-9px w-100"><span
                                     class="bg-gradient-flamingo-amethyst-green h-10px opacity-2"></span></span>
                         </h2> <sup class="fs-24"><b>+</b></sup>
@@ -796,7 +320,7 @@
                         <h3 class="text-white fw-700 mb-0 ls-minus-1px">Our services</h3>
                     </div>
                     <div class="col-lg-5 last-paragraph-no-margin md-mb-20px">
-                        <p class="w-85 md-w-100">Discover tailored solutions spanning software development, data analytics, AI, and more, designed to drive growth and innovation for your business.</p>
+                        <p class="md-w-100">Explore our comprehensive suite of IT services designed to elevate your business to new heights. Trust our experienced team to deliver innovative solutions that optimize efficiency, enhance security, and drive growth for your organization.</p>
                     </div>
                     <div class="col-lg-2 d-flex justify-content-center justify-content-lg-end">
 
@@ -818,27 +342,24 @@
                                 data-slider-options="{ &quot;slidesPerView&quot;: 1, &quot;spaceBetween&quot;: 30, &quot;loop&quot;: true, &quot;navigation&quot;: { &quot;nextEl&quot;: &quot;.slider-one-slide-next-1&quot;, &quot;prevEl&quot;: &quot;.slider-one-slide-prev-1&quot; }, &quot;autoplay&quot;: { &quot;delay&quot;: 4000, &quot;disableOnInteraction&quot;: false }, &quot;keyboard&quot;: { &quot;enabled&quot;: true, &quot;onlyInViewport&quot;: true }, &quot;breakpoints&quot;: { &quot;1200&quot;: { &quot;slidesPerView&quot;: 4 }, &quot;992&quot;: { &quot;slidesPerView&quot;: 3 }, &quot;768&quot;: { &quot;slidesPerView&quot;: 2 }, &quot;320&quot;: { &quot;slidesPerView&quot;: 1 } }, &quot;effect&quot;: &quot;slide&quot; }">
                                 <div class="swiper-wrapper">
 
+                                    {% for service in services %}
                                     <div class="swiper-slide">
 
                                         <div
                                             class="interactive-banner-style-09 border-radius-6px overflow-hidden position-relative">
-                                            <img src="/static/web/images/services/software-development.jpg" alt />
+                                            <img src="{{service.image.url}}" alt />
                                             <div class="opacity-extra-medium bg-gradient-dark-transparent"></div>
                                             <div
                                                 class="image-content h-100 w-100 ps-15 pe-15 pt-13 pb-13 md-p-10 d-flex justify-content-bottom align-items-start flex-column">
                                                 <div class="hover-label-icon position-relative z-index-9">
-                                                    {% comment %} <div
-                                                        class="label bg-base-color fw-600 text-white text-uppercase border-radius-30px ps-20px pe-20px fs-12 ls-05px">
-                                                        Creativity</div> {% endcomment %}
-                                                    <i class="line-icon-Medal-2 text-white icon-extra-large"></i>
+                                                    <i class="{{service.icon}} text-white icon-extra-large"></i>
                                                 </div>
                                                 <div
                                                     class="mt-auto d-flex align-items-start w-100 z-index-1 position-relative overflow-hidden flex-column">
-                                                    <span class="text-white fw-600 fs-20">Software Development</span>
+                                                    <span class="text-white fw-600 fs-20">{{service.title}}</span>
                                                     <span
-                                                        class="content-title text-white fs-13 fw-500 text-uppercase ls-05px">Innovative
-                                                        solutions</span>
-                                                    <a href="demo-corporate-services-details.html"
+                                                        class="content-title text-white fs-13 fw-500 text-uppercase ls-05px">{{service.subtitle}}</span>
+                                                    <a href="{{service.get_absolute_url}}"
                                                         class="content-title-hover fs-13 lh-24 fw-500 ls-05px text-uppercase text-white opacity-6 text-decoration-line-bottom">Explore
                                                         services</a>
                                                     <span
@@ -849,169 +370,13 @@
                                                     class="position-absolute left-0px top-0px w-100 h-100 bg-gradient-regal-blue-transparent opacity-9">
                                                 </div>
                                                 <div class="box-overlay bg-gradient-base-color-transparent"></div>
-                                                <a href="demo-corporate-services-details.html"
+                                                <a href="{{service.get_absolute_url}}"
                                                     class="position-absolute z-index-1 top-0px left-0px h-100 w-100"></a>
                                             </div>
                                         </div>
 
                                     </div>
-
-
-                                    <div class="swiper-slide">
-
-                                        <div
-                                            class="interactive-banner-style-09 border-radius-6px overflow-hidden position-relative">
-                                            <img src="/static/web/images/services/mobile-application.jpg" alt />
-                                            <div class="opacity-very-light bg-slate-blue"></div>
-                                            <div
-                                                class="image-content h-100 w-100 ps-15 pe-15 pt-13 pb-13 md-p-10 d-flex justify-content-bottom align-items-start flex-column">
-                                                <div class="hover-label-icon position-relative z-index-9">
-                                                    {% comment %} <div
-                                                        class="label bg-base-color fw-600 text-white text-uppercase border-radius-30px ps-20px pe-20px fs-12 ls-05px">
-                                                        Flexible</div> {% endcomment %}
-                                                    <i class="line-icon-Archery-2 text-white icon-extra-large"></i>
-                                                </div>
-                                                <div
-                                                    class="mt-auto d-flex align-items-start w-100 z-index-1 position-relative overflow-hidden flex-column">
-                                                    <span class="text-white fw-600 fs-20">Mobile Application Development</span>
-                                                    <span
-                                                        class="content-title text-white fs-13 fw-500 text-uppercase ls-05px">Competitors
-                                                        research</span>
-                                                    <a href="demo-corporate-services-details.html"
-                                                        class="content-title-hover fs-13 lh-24 fw-500 ls-05px text-uppercase text-white opacity-6 text-decoration-line-bottom">Explore
-                                                        services</a>
-                                                    <span
-                                                        class="content-arrow lh-42px rounded-circle bg-white w-50px h-50px ms-20px text-center"><i
-                                                            class="fa-solid fa-chevron-right text-dark-gray fs-16"></i></span>
-                                                </div>
-                                                <div
-                                                    class="position-absolute left-0px top-0px w-100 h-100 bg-gradient-regal-blue-transparent opacity-9">
-                                                </div>
-                                                <div class="box-overlay bg-gradient-base-color-transparent"></div>
-                                                <a href="demo-corporate-services-details.html"
-                                                    class="position-absolute z-index-1 top-0px left-0px h-100 w-100"></a>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-
-                                    <div class="swiper-slide">
-
-                                        <div
-                                            class="interactive-banner-style-09 border-radius-6px overflow-hidden position-relative">
-                                            <img src="/static/web/images/services/web-development.jpg" alt />
-                                            <div class="opacity-very-light bg-slate-blue"></div>
-                                            <div
-                                                class="image-content h-100 w-100 ps-15 pe-15 pt-13 pb-13 md-p-10 d-flex justify-content-bottom align-items-start flex-column">
-                                                <div class="hover-label-icon position-relative z-index-9">
-                                                    {% comment %} <div
-                                                        class="label bg-base-color fw-600 text-white text-uppercase border-radius-30px ps-20px pe-20px fs-12 ls-05px">
-                                                        Discover</div> {% endcomment %}
-                                                    <i class="line-icon-Financial text-white icon-extra-large"></i>
-                                                </div> 
-                                                <div
-                                                    class="mt-auto d-flex align-items-start w-100 z-index-1 position-relative overflow-hidden flex-column">
-                                                    <span class="text-white fw-600 fs-20">Web Development</span>
-                                                    <span
-                                                        class="content-title text-white fs-13 fw-500 text-uppercase ls-05px">Targeted
-                                                        growth</span>
-                                                    <a href="demo-corporate-services-details.html"
-                                                        class="content-title-hover fs-13 lh-24 fw-500 ls-05px text-uppercase text-white opacity-6 text-decoration-line-bottom">Explore
-                                                        services</a>
-                                                    <span
-                                                        class="content-arrow lh-42px rounded-circle bg-white w-50px h-50px ms-20px text-center"><i
-                                                            class="fa-solid fa-chevron-right text-dark-gray fs-16"></i></span>
-                                                </div>
-                                                <div
-                                                    class="position-absolute left-0px top-0px w-100 h-100 bg-gradient-regal-blue-transparent opacity-9">
-                                                </div>
-                                                <div class="box-overlay bg-gradient-base-color-transparent"></div>
-                                                <a href="demo-corporate-services-details.html"
-                                                    class="position-absolute z-index-1 top-0px left-0px h-100 w-100"></a>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-
-                                    <div class="swiper-slide">
-
-                                        <div
-                                            class="interactive-banner-style-09 border-radius-6px overflow-hidden position-relative">
-                                            <img src="/static/web/images/services/e-com.jpg" alt />
-                                            <div class="opacity-very-light bg-slate-blue"></div>
-                                            <div
-                                                class="image-content h-100 w-100 ps-15 pe-15 pt-13 pb-13 md-p-10 d-flex justify-content-bottom align-items-start flex-column">
-                                                <div class="hover-label-icon position-relative z-index-9">
-                                                    {% comment %} <div
-                                                        class="label bg-base-color fw-600 text-white text-uppercase border-radius-30px ps-20px pe-20px fs-12 ls-05px">
-                                                        Modern</div> {% endcomment %}
-                                                    <i class="line-icon-Money-Bag text-white icon-extra-large"></i>
-                                                </div>
-                                                <div
-                                                    class="mt-auto d-flex align-items-start w-100 z-index-1 position-relative overflow-hidden flex-column">
-                                                    <span class="text-white fw-600 fs-20">E-commerce Solutions</span>
-                                                    <span
-                                                        class="content-title text-white fs-13 fw-500 text-uppercase ls-05px">Competitors
-                                                        research</span>
-                                                    <a href="demo-corporate-services-details.html"
-                                                        class="content-title-hover fs-13 lh-24 fw-500 ls-05px text-uppercase text-white opacity-6 text-decoration-line-bottom">Explore
-                                                        services</a>
-                                                    <span
-                                                        class="content-arrow lh-42px rounded-circle bg-white w-50px h-50px ms-20px text-center"><i
-                                                            class="fa-solid fa-chevron-right text-dark-gray fs-16"></i></span>
-                                                </div>
-                                                <div
-                                                    class="position-absolute left-0px top-0px w-100 h-100 bg-gradient-regal-blue-transparent opacity-9">
-                                                </div>
-                                                <div class="box-overlay bg-gradient-base-color-transparent"></div>
-                                                <a href="demo-corporate-services-details.html"
-                                                    class="position-absolute z-index-1 top-0px left-0px h-100 w-100"></a>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-
-                                    <div class="swiper-slide">
-
-                                        <div
-                                            class="interactive-banner-style-09 border-radius-6px overflow-hidden position-relative">
-                                            <img src="/static/web/images/services/cloud.jpg" alt />
-                                            <div class="opacity-extra-medium bg-gradient-dark-transparent"></div>
-                                            <div
-                                                class="image-content h-100 w-100 ps-15 pe-15 pt-13 pb-13 md-p-10 d-flex justify-content-bottom align-items-start flex-column">
-                                                <div class="hover-label-icon position-relative z-index-9">
-                                                    {% comment %} <div
-                                                        class="label bg-base-color fw-600 text-white text-uppercase border-radius-30px ps-20px pe-20px fs-12 ls-05px">
-                                                        Creativity</div> {% endcomment %}
-                                                    <i class="line-icon-Medal-2 text-white icon-extra-large"></i>
-                                                </div>
-                                                <div
-                                                    class="mt-auto d-flex align-items-start w-100 z-index-1 position-relative overflow-hidden flex-column">
-                                                    <span class="text-white fw-600 fs-20">Cloud Computing</span>
-                                                    <span
-                                                        class="content-title text-white fs-13 fw-500 text-uppercase ls-05px">Innovative
-                                                        solutions</span>
-                                                    <a href="demo-corporate-services-details.html"
-                                                        class="content-title-hover fs-13 lh-24 fw-500 ls-05px text-uppercase text-white opacity-6 text-decoration-line-bottom">Explore
-                                                        services</a>
-                                                    <span
-                                                        class="content-arrow lh-42px rounded-circle bg-white w-50px h-50px ms-20px text-center"><i
-                                                            class="fa-solid fa-chevron-right text-dark-gray fs-16"></i></span>
-                                                </div>
-                                                <div
-                                                    class="position-absolute left-0px top-0px w-100 h-100 bg-gradient-regal-blue-transparent opacity-9">
-                                                </div>
-                                                <div class="box-overlay bg-gradient-base-color-transparent"></div>
-                                                <a href="demo-corporate-services-details.html"
-                                                    class="position-absolute z-index-1 top-0px left-0px h-100 w-100"></a>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
+                                    {% endfor %}
                                 </div>
                             </div>
                         </div>
@@ -1033,13 +398,13 @@
         <section>
             <div class="container position-relative">
                 <div class="row align-items-center mb-7">
-                    <div class="col-xxl-4 col-lg-5 md-mb-15 sm-mb-20 text-center text-lg-start">
+                    <div class="col-xxl-6 col-lg-6 md-mb-15 sm-mb-20 text-center text-lg-start">
                         <span
                             class="ps-25px pe-25px mb-20px text-uppercase text-base-color fs-14 lh-42px fw-700 border-radius-100px bg-gradient-very-light-gray-transparent d-inline-block">Partnership Strategies</span>
                         <h3 class="text-dark-gray fw-700 ls-minus-2px mb-40px">Strategic Collaborations Driving Business Expansion</h3>
                         <div class="row row-cols-1"
                             data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [30, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-
+                            
                             <div class="col-12 process-step-style-05 position-relative hover-box">
                                 <div class="process-step-item d-flex">
                                     <div class="process-step-icon-wrap position-relative">
@@ -1094,7 +459,7 @@
 
                         </div>
                     </div>
-                    <div class="col-lg-7 offset-xxl-1 position-relative md-mb-30px sm-mb-15"
+                    <div class="col-xxl-5 col-lg-6 offset-xxl-1 position-relative md-mb-30px sm-mb-15"
                         data-anime="{ &quot;translateX&quot;: [0, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 1200, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 150, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
                         <img src="/static/web/images/demo-corporate-10.png" class="position-relative z-index-9 top-40px" alt>
                         <img src="/static/web/images/demo-corporate-03.png" class="absolute-middle-center xs-w-95" alt>
@@ -1146,98 +511,20 @@
                             data-slider-options="{ &quot;loop&quot;: true, &quot;autoplay&quot;: { &quot;delay&quot;: 4000, &quot;disableOnInteraction&quot;: false }, &quot;keyboard&quot;: { &quot;enabled&quot;: true, &quot;onlyInViewport&quot;: true }, &quot;navigation&quot;: { &quot;nextEl&quot;: &quot;.swiper-button-next-nav&quot;, &quot;prevEl&quot;: &quot;.swiper-button-previous-nav&quot;, &quot;effect&quot;: &quot;fade&quot; } }">
                             <div class="swiper-wrapper">
 
+                                {% for testimonial in testimonials %}
                                 <div class="swiper-slide">
                                     <div class="row align-items-center justify-content-center">
-                                        <div class="col-8 col-md-4 col-sm-6 text-center md-mb-30px">
-                                            <img alt src="/static/web/images/demo-corporate-testimonials-01.png">
+                                        <div class="col-8 col-md-3 col-sm-6 text-center md-mb-30px">
+                                            <img class="testimonial_img" alt src="{{testimonial.image.url}}">
                                         </div>
                                         <div
-                                            class="col-lg-5 col-md-7 last-paragraph-no-margin text-center text-md-start">
-                                            {% comment %} <a href="#" class="mb-15px d-block"><img
-                                                    src="/static/web/images/logo-monday-dark-blue-01.svg" class="h-35px" alt></a> {% endcomment %}
-                                            <span class="mb-5px d-table fs-18 lh-30 fw-500 text-dark-gray">Built a robust Learning Management System for Roche Middle East to manage events, webinars, and online training efficiently.</span>
-                                            <span class="fs-15 text-uppercase fw-800 text-base-color ls-1px">Roche Middle East UAE</span>
+                                            class="col-lg-5 col-md-8 last-paragraph-no-margin text-center text-md-start">
+                                            <span class="mb-5px d-table fs-18 lh-30 fw-500 text-dark-gray">{{testimonial.description}}</span>
+                                            <span class="fs-15 text-uppercase fw-800 text-base-color ls-1px">{{testimonial.name}}</span>
                                         </div>
                                     </div>
                                 </div>
-
-
-                                <div class="swiper-slide">
-                                    <div class="row align-items-center justify-content-center">
-                                        <div class="col-8 col-md-4 col-sm-6 text-center md-mb-30px">
-                                            <img alt src="/static/web/images/demo-corporate-testimonials-02.png">
-                                        </div>
-                                        <div
-                                            class="col-lg-5 col-md-7 last-paragraph-no-margin text-center text-md-start">
-                                            {% comment %} <a href="#" class="mb-15px d-block"><img
-                                                    src="/static/web/images/logo-loitech-dark-blue.svg" class="h-35px" alt></a> {% endcomment %}
-                                            <span class="mb-5px d-table fs-18 lh-30 fw-500 text-dark-gray">Streamlined production processes with a custom application for AJC, a leading gold manufacturer in India.</span>
-                                            <span class="fs-15 text-uppercase fw-800 text-base-color ls-1px">AJC Gold INDIA</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="swiper-slide">
-                                    <div class="row align-items-center justify-content-center">
-                                        <div class="col-8 col-md-4 col-sm-6 text-center md-mb-30px">
-                                            <img alt src="/static/web/images/demo-corporate-testimonials-03.png">
-                                        </div>
-                                        <div
-                                            class="col-lg-5 col-md-7 last-paragraph-no-margin text-center text-md-start">
-                                            {% comment %} <a href="#" class="mb-15px d-block"><img
-                                                    src="/static/web/images/logo-invision-dark-blue.svg" class="h-35px" alt></a> {% endcomment %}
-                                            <span class="mb-5px d-table fs-18 lh-30 fw-500 text-dark-gray">Enhanced property management for Rellatale Group (UAE) with a dedicated application</span>
-                                            <span class="fs-15 text-uppercase fw-800 text-base-color ls-1px">Rellable Properties UAE</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="swiper-slide">
-                                    <div class="row align-items-center justify-content-center">
-                                        <div class="col-8 col-md-4 col-sm-6 text-center md-mb-30px">
-                                            <img alt src="/static/web/images/demo-corporate-testimonials-03.png">
-                                        </div>
-                                        <div
-                                            class="col-lg-5 col-md-7 last-paragraph-no-margin text-center text-md-start">
-                                            {% comment %} <a href="#" class="mb-15px d-block"><img
-                                                    src="/static/web/images/logo-invision-dark-blue.svg" class="h-35px" alt></a> {% endcomment %}
-                                            <span class="mb-5px d-table fs-18 lh-30 fw-500 text-dark-gray">Developed a comprehensive LIMS application for MSCL-a one-stop solution for calibration needs.</span>
-                                            <span class="fs-15 text-uppercase fw-800 text-base-color ls-1px">MSCL IRAQ</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="swiper-slide">
-                                    <div class="row align-items-center justify-content-center">
-                                        <div class="col-8 col-md-4 col-sm-6 text-center md-mb-30px">
-                                            <img alt src="/static/web/images/demo-corporate-testimonials-03.png">
-                                        </div>
-                                        <div
-                                            class="col-lg-5 col-md-7 last-paragraph-no-margin text-center text-md-start">
-                                            {% comment %} <a href="#" class="mb-15px d-block"><img
-                                                    src="/static/web/images/logo-invision-dark-blue.svg" class="h-35px" alt></a> {% endcomment %}
-                                            <span class="mb-5px d-table fs-18 lh-30 fw-500 text-dark-gray">Efficient e-commerce applications to manage inventory, orders, and customer interactions with wase</span>
-                                            <span class="fs-15 text-uppercase fw-800 text-base-color ls-1px">Zalomi UAE & Doha Link Qatar</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="swiper-slide">
-                                    <div class="row align-items-center justify-content-center">
-                                        <div class="col-8 col-md-4 col-sm-6 text-center md-mb-30px">
-                                            <img alt src="/static/web/images/demo-corporate-testimonials-03.png">
-                                        </div>
-                                        <div
-                                            class="col-lg-5 col-md-7 last-paragraph-no-margin text-center text-md-start">
-                                            {% comment %} <a href="#" class="mb-15px d-block"><img
-                                                    src="/static/web/images/logo-invision-dark-blue.svg" class="h-35px" alt></a> {% endcomment %}
-                                            <span class="mb-5px d-table fs-18 lh-30 fw-500 text-dark-gray">Developed an integrated mobile app solution for monitoring solar device usage and live energy production data (lot application.</span>
-                                            <span class="fs-15 text-uppercase fw-800 text-base-color ls-1px">Prominent Kerala</span>
-                                        </div>
-                                    </div>
-                                </div>
-
+                                {% endfor %}
                             </div>
 
                             <div class="swiper-button-previous-nav swiper-button-prev md-left-0px"><i
@@ -1248,72 +535,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="row row-cols-1 row-cols-md-3 justify-content-center mb-6 md-mb-8 sm-mb-45px"
-                    data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;willchange&quot;: &quot;transform&quot;, &quot;perspective&quot;: [1200,1200], &quot;translateY&quot;: [0, 0], &quot;scale&quot;: [1.1, 1], &quot;rotateX&quot;: [30, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 1000, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-                    <div class="col sm-mb-30px">
-                        <div
-                            class="bg-white h-100 border-radius-6px text-center box-shadow-quadruple-large box-shadow-quadruple-large-hover">
-                            <div class="pt-10 pb-10">
-                                <img src="/static/web/images/logo-monday-dark-gray-02.svg" class="h-40px md-h-35px sm-h-40px" alt />
-                            </div>
-                            <div class="border-top fs-16 p-15px last-paragraph-no-margin">
-                                <p>Project management - <span class="fw-600 text-dark-gray">275% Growth</span></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col sm-mb-30px">
-                        <div
-                            class="bg-white h-100 border-radius-6px text-center box-shadow-quadruple-large box-shadow-quadruple-large-hover">
-                            <div class="pt-10 pb-10">
-                                <img src="/static/web/images/logo-dropbox-dark-gray-02.svg" class="h-40px md-h-35px sm-h-40px"
-                                    alt />
-                            </div>
-                            <div
-                                class="border-top fs-16 border-1 border-color-extra-medium-gray p-15px last-paragraph-no-margin">
-                                <p>Team management - <span class="fw-600 text-dark-gray">195% Growth</span></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div
-                            class="bg-white h-100 border-radius-6px text-center box-shadow-quadruple-large box-shadow-quadruple-large-hover">
-                            <div class="pt-10 pb-10">
-                                <img src="/static/web/images/logo-slack-dark-gray-02.svg" class="h-40px md-h-35px sm-h-40px" alt />
-                            </div>
-                            <div
-                                class="border-top fs-16 border-1 border-color-extra-medium-gray p-15px last-paragraph-no-margin">
-                                <p>Secure storage - <span class="fw-600 text-dark-gray">235% Growth</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
                 <div class="row row-cols-1 row-cols-lg-5 row-cols-md-3 row-cols-sm-2 clients-style-06 justify-content-center ps-3 pe-3 xs-mt-40px"
                     data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateX&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 1200, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 150, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
 
+                    {% for client in clients %}
                     <div class="col client-box text-center md-mb-40px">
-                        <a href="#"><img src="/static/web/images/logo-walmart-dark-blue.svg" class="h-45px" alt></a>
+                        <a href="#"><img src="{{client.image.url}}" class="h-45px" alt></a>
                     </div>
-
-
-                    <div class="col client-box text-center md-mb-40px">
-                        <a href="#"><img src="/static/web/images/logo-netflix-dark-blue.svg" class="h-45px" alt></a>
-                    </div>
-
-
-                    <div class="col client-box text-center md-mb-40px">
-                        <a href="#"><img src="/static/web/images/logo-invision-dark-blue.svg" class="h-45px" alt></a>
-                    </div>
-
-
-                    <div class="col client-box text-center sm-mb-40px">
-                        <a href="#"><img src="/static/web/images/logo-yahoo-dark-blue.svg" class="h-45px" alt></a>
-                    </div>
-
-
-                    <div class="col client-box text-center">
-                        <a href="#"><img src="/static/web/images/logo-amazon-dark-blue.svg" class="h-45px" alt></a>
-                    </div>
-
+                    {% endfor %}
                 </div>
             </div>
         </section>
@@ -1335,7 +565,7 @@
                                     </h3>
                                 </div>
                                 <div class="col-md-2 position-relative z-index-1 text-center sm-mb-20px">
-                                    <a href="https://www.youtube.com/watch?v=cfXHhfNy7tU"
+                                    <a href="https://www.youtube.com/watch?v=3KtWfp0UopM"
                                         class="position-relative d-inline-block text-center border border-2 border-color-white rounded-circle video-icon-box video-icon-large popup-youtube">
                                         <span>
                                             <span class="video-icon">
@@ -1372,110 +602,26 @@
                             data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 1200, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 150, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
                             <li class="grid-sizer"></li>
 
+                            {% for blog in blogs %}
                             <li class="grid-item">
                                 <div
                                     class="card border-0 border-radius-5px box-shadow-quadruple-large box-shadow-quadruple-large-hover">
                                     <div class="blog-image">
-                                        <a href="demo-corporate-blog-single-clean.html" class="d-block"><img
-                                                src="/static/web/images/demo-corporate-blog-01.jpg" alt /></a>
+                                        <a href="{{blog.get_absolute_url}}" class="d-block"><img
+                                                src="{{blog.image.url}}" alt /></a>
                                         <div class="blog-categories">
-                                            <a href="demo-corporate-blog.html"
-                                                class="categories-btn bg-white text-dark-gray text-dark-gray-hover text-uppercase fw-700">Business</a>
+                                            <a href="{{blog.get_absolute_url}}"
+                                                class="categories-btn bg-white text-dark-gray text-dark-gray-hover text-uppercase fw-700">{{blog.category}}</a>
                                         </div>
                                     </div>
                                     <div class="card-body p-12 lg-p-10">
-                                        <a href="demo-corporate-blog-single-clean.html"
-                                            class="card-title mb-15px fw-700 fs-19 text-dark-gray d-inline-block w-90 md-w-100">Streamlining Your Business with Nexte...</a>
-                                        <p>Explore how Nexteons' structured approach ....</p>
-                                        <div
-                                            class="author d-flex justify-content-center align-items-center position-relative overflow-hidden fs-14 text-uppercase">
-                                            <div class="me-auto">
-                                                <span class="blog-date d-inline-block fw-700 text-dark-gray">30 August
-                                                    2021</span>
-                                                <div class="d-inline-block author-name fw-700 text-dark-gray">By <a
-                                                        href="demo-corporate-blog.html"
-                                                        class="text-dark-gray text-decoration-line-bottom">Den
-                                                        viliamson</a></div>
-                                            </div>
-                                            <div class="like-count">
-                                                <a href="#"><i class="fa-regular fa-heart text-red"></i><span
-                                                        class="text-dark-gray align-middle fw-700">25</span></a>
-                                            </div>
-                                        </div>
+                                        <a href="{{blog.get_absolute_url}}"
+                                            class="card-title mb-15px fw-700 fs-19 text-dark-gray d-inline-block w-90 md-w-100">{{blog.title}}</a>
+                                        <p>{{blog.summary|truncatechars:100}}</p>
                                     </div>
                                 </div>
                             </li>
-
-
-                            <li class="grid-item">
-                                <div
-                                    class="card border-0 border-radius-5px box-shadow-quadruple-large box-shadow-quadruple-large-hover">
-                                    <div class="blog-image">
-                                        <a href="demo-corporate-blog-single-clean.html" class="d-block"><img
-                                                src="/static/web/images/demo-corporate-blog-02.jpg" alt /></a>
-                                        <div class="blog-categories">
-                                            <a href="demo-corporate-blog.html"
-                                                class="categories-btn bg-white text-dark-gray text-dark-gray-hover text-uppercase fw-700">Development</a>
-                                        </div>
-                                    </div>
-                                    <div class="card-body p-12 lg-p-10">
-                                        <a href="demo-corporate-blog-single-clean.html"
-                                            class="card-title mb-15px fw-700 fs-19 text-dark-gray d-inline-block w-90 md-w-100">Unlocking Business Potential: A Closer ...</a>
-                                        <p>Discover how Nexteons' consulting services provide ...</p>
-                                        <div
-                                            class="author d-flex justify-content-center align-items-center position-relative overflow-hidden fs-14 text-uppercase">
-                                            <div class="me-auto">
-                                                <span class="blog-date d-inline-block fw-700 text-dark-gray">28 August
-                                                    2021</span>
-                                                <div class="d-inline-block author-name fw-700 text-dark-gray">By <a
-                                                        href="demo-corporate-blog.html"
-                                                        class="text-dark-gray text-decoration-line-bottom">Hugh
-                                                        macleod</a></div>
-                                            </div>
-                                            <div class="like-count">
-                                                <a href="#"><i class="fa-regular fa-heart text-red"></i><span
-                                                        class="text-dark-gray align-middle fw-700">58</span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-
-
-                            <li class="grid-item">
-                                <div
-                                    class="card border-0 border-radius-5px box-shadow-quadruple-large box-shadow-quadruple-large-hover">
-                                    <div class="blog-image">
-                                        <a href="demo-corporate-blog-single-clean.html" class="d-block"><img
-                                                src="/static/web/images/demo-corporate-blog-03.jpg" alt /></a>
-                                        <div class="blog-categories">
-                                            <a href="demo-corporate-blog.html"
-                                                class="categories-btn bg-white text-dark-gray text-dark-gray-hover text-uppercase fw-700">Business</a>
-                                        </div>
-                                    </div>
-                                    <div class="card-body p-12 lg-p-10">
-                                        <a href="demo-corporate-blog-single-clean.html"
-                                            class="card-title mb-15px fw-700 fs-19 text-dark-gray d-inline-block w-90 md-w-100">Harnessing the Power of Advanced...</a>
-                                        <p>Dive into Nexteons' capabilities in cutting-edge...</p>
-                                        <div
-                                            class="author d-flex justify-content-center align-items-center position-relative overflow-hidden fs-14 text-uppercase">
-                                            <div class="me-auto">
-                                                <span class="blog-date d-inline-block fw-700 text-dark-gray">26 August
-                                                    2021</span>
-                                                <div class="d-inline-block author-name fw-700 text-dark-gray">By <a
-                                                        href="demo-corporate-blog.html"
-                                                        class="text-dark-gray text-decoration-line-bottom">Walton
-                                                        smith</a></div>
-                                            </div>
-                                            <div class="like-count">
-                                                <a href="#"><i class="fa-regular fa-heart text-red"></i><span
-                                                        class="text-dark-gray align-middle fw-700">75</span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-
+                            {% endfor %}
                         </ul>
                     </div>
                 </div>
@@ -1497,126 +643,7 @@
 
     <script type="text/javascript" src="/static/web/js/jquery.js"></script>
     <script type="text/javascript" src="/static/web/js/vendors.min.js"></script>
-
-    <script type="text/javascript" src="/static/web/revolution/js/jquery.themepunch.tools.min.js"></script>
-    <script type="text/javascript" src="/static/web/revolution/js/jquery.themepunch.revolution.min.js"></script>
-
-    <script>
-        var tpj = jQuery;
-        var revapi7;
-        var $ = jQuery.noConflict();
-        tpj(document).ready(function () {
-            if (tpj("#demo-corporate-slider").revolution == undefined) {
-                revslider_showDoubleJqueryError("#demo-corporate-slider");
-            } else {
-                revapi7 = tpj("#demo-corporate-slider").show().revolution({
-                    sliderType: "standard",
-                    /* sets the Slider's default timeline */
-                    delay: 9000,
-                    /* options are 'auto', 'fullwidth' or 'fullscreen' */
-                    sliderLayout: 'fullscreen',
-                    /* RESPECT ASPECT RATIO */
-                    autoHeight: 'off',
-                    /* options that disable autoplay */
-                    stopLoop: "off",
-                    stopAfterLoops: -1,
-                    stopAtSlide: -1,
-                    navigation: {
-                        keyboardNavigation: 'on',
-                        keyboard_direction: 'horizontal',
-                        mouseScrollNavigation: 'off',
-                        mouseScrollReverse: 'reverse',
-                        onHoverStop: 'off',
-                        arrows: {
-                            enable: true,
-                            style: 'hesperiden',
-                            rtl: false,
-                            hide_onleave: false,
-                            hide_onmobile: true,
-                            hide_under: 500,
-                            hide_over: 9999,
-                            hide_delay: 200,
-                            hide_delay_mobile: 1200,
-                            left: {
-                                container: 'slider',
-                                h_align: 'left',
-                                v_align: 'center',
-                                h_offset: 50,
-                                v_offset: 0
-                            },
-                            right: {
-                                container: 'slider',
-                                h_align: 'right',
-                                v_align: 'center',
-                                h_offset: 50,
-                                v_offset: 0
-                            }
-                        },
-                        bullets: {
-
-                            enable: true,
-                            style: 'hermes',
-                            tmp: '',
-                            direction: 'horizontal',
-                            rtl: false,
-
-                            container: 'layergrid',
-                            h_align: 'center',
-                            v_align: 'bottom',
-                            h_offset: 0,
-                            v_offset: 30,
-                            space: 12,
-
-                            hide_onleave: false,
-                            hide_onmobile: true,
-                            hide_under: 0,
-                            hide_over: 500,
-                            hide_delay: true,
-                            hide_delay_mobile: 500
-
-                        },
-                        touch: {
-                            touchenabled: 'on',
-                            touchOnDesktop: "on",
-                            swipe_threshold: 75,
-                            swipe_min_touches: 1,
-                            swipe_direction: 'horizontal',
-                            drag_block_vertical: true
-                        }
-                    },
-                    responsiveLevels: [1240, 1024, 768, 480],
-                    visibilityLevels: [1240, 1024, 768, 480],
-                    gridwidth: [1240, 1024, 768, 480],
-                    gridheight: [930, 850, 900, 850],
-                    /* Lazy Load options are "all", "smart", "single" and "none" */
-                    lazyType: "smart",
-                    spinner: "spinner0",
-                    parallax: {
-                        type: "scroll",
-                        origo: "slidercenter",
-                        speed: 400,
-                        levels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 46, 47, 48, 49, 50, 51, 5],
-                    },
-                    shadow: 0,
-                    shuffle: "off",
-                    fullScreenAutoWidth: "on",
-                    fullScreenAlignForce: "on",
-                    fullScreenOffsetContainer: "nav",
-                    fullScreenOffset: "",
-                    hideThumbsOnMobile: "off",
-                    hideSliderAtLimit: 0,
-                    hideCaptionAtLimit: 0,
-                    hideAllCaptionAtLilmit: 0,
-                    debugMode: false,
-                    fallbacks: {
-                        simplifyAll: "off",
-                        nextSlideOnWindowFocus: "off",
-                        disableFocusListener: false,
-                    }
-                });
-            }
-        }); /*ready*/
-    </script>
+    {% include 'web/partials/revolution.html' %}
     <script type="text/javascript" src="/static/web/js/main.js"></script>
 </body>
 

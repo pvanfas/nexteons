@@ -1,0 +1,5 @@
+django==4.2.9
+django-ckeditor-5
+django-crispy-forms
+django-extensions
+django-import-export

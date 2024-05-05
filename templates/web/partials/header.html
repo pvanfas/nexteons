@@ -27,7 +27,7 @@
                         <li class="nav-item"><a href="{% url 'web:blogs' %}" class="nav-link">Blog</a></li>
                         <li class="nav-item"><a href="{% url 'web:services' %}" class="nav-link">Services</a>
                         <li class="nav-item"><a href="{% url 'web:products' %}" class="nav-link">Products</a>  
-                        <li class="nav-item"><a href="{% url 'web:career' %}" class="nav-link">Career</a> 
+                        <li class="nav-item"><a href="{% url 'web:careers' %}" class="nav-link">Careers</a> 
                         <li class="nav-item"><a href="{% url 'web:contact' %}" class="nav-link">Contact</a>
                         </li>
                     </ul>
@@ -35,30 +35,9 @@
             </div>
             <div class="col-auto col-xl-3 col-lg-2 text-end md-pe-0">
                 <div class="header-icon">
-                    <div class="header-search-icon icon">
-                        <a href="#" class="search-form-icon header-search-form"><i
-                                class="feather icon-feather-search"></i></a>
-
-                        <div class="search-form-wrapper">
-                            <button title="Close" type="button" class="search-close">×</button>
-                            <form id="search-form" role="search" method="get" class="search-form text-left"
-                                action="#">
-                                <div class="search-form-box">
-                                    <h2 class="text-dark-gray text-center fw-600 mb-4 ls-minus-1px">What are you
-                                        looking for?</h2>
-                                    <input class="search-input" id="search-form-input5e219ef164995"
-                                        placeholder="Enter your keywords..." name="s" value type="text"
-                                        autocomplete="off">
-                                    <button type="submit" class="search-button">
-                                        <i class="feather icon-feather-search" aria-hidden="true"></i>
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-
-                    </div>
+                    <div class="header-search-icon icon"></div>
                     <div class="header-button ms-20px d-none d-xl-inline-block">
-                        <a href="#"
+                        <a href="{% url 'web:careers' %}"
                             class="btn btn-rounded btn-transparent-light-gray border-1 btn-medium btn-switch-text text-transform-none">
                             <span>
                                 <span class="btn-double-text fw-600" data-text="Free consultation">Free

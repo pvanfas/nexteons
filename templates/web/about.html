@@ -130,7 +130,7 @@
 <section class="position-relative overflow-hidden">
     <div class="container">
         <div class="row justify-content-center align-items-center mb-3">
-            <div class="col-xl-5 col-lg-6 md-mb-14 sm-mb-18 xs-mb-23 position-relative"
+            <div class="col-xl-3 col-lg-6 md-mb-14 sm-mb-18 xs-mb-23 position-relative"
                 data-anime="{ &quot;translateY&quot;: [0, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 800, &quot;delay&quot;: 100, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
                 <div class="w-75 sm-w-80" data-animation-delay="200" data-shadow-animation="true"
                     data-bottom-top="transform: translateY(50px)"
@@ -146,44 +146,20 @@
                         class="border-radius-6px box-shadow-quadruple-large w-100" />
                 </div>
             </div>
-            <div class="col-xl-5 offset-xl-1 col-lg-6 text-center text-lg-start"
-                data-anime="{ &quot;translateY&quot;: [0, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 800, &quot;delay&quot;: 150, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-                <div class="swiper position-relative magic-cursor"
-                    data-slider-options="{ &quot;autoHeight&quot;: true, &quot;loop&quot;: true, &quot;allowTouchMove&quot;: true, &quot;autoplay&quot;: { &quot;delay&quot;: 4000, &quot;disableOnInteraction&quot;: false }, &quot;navigation&quot;: { &quot;nextEl&quot;: &quot;.swiper-button-next&quot;, &quot;prevEl&quot;: &quot;.swiper-button-prev&quot; }, &quot;effect&quot;: &quot;slide&quot; }">
-                    <div class="swiper-wrapper mb-10px">
+            <div class="col-xl-7 offset-xl-1 col-lg-6 text-center text-lg-start">
+                <div class="">
+                    <div class="mb-10px">
 
-                        <div class="swiper-slide">
-                            <span
-                                class="ps-25px pe-25px mb-20px text-uppercase text-base-color fs-14 lh-42px fw-700 border-radius-100px bg-gradient-very-light-gray-transparent d-inline-block">Vision</span>
-                           
-                            <p class="w-95 xl-w-100">We aspire to be the world's leading provider of customized software solutions.</p>
+                        <div class="swiper">
+                            <span class="ps-25px pe-25px mb-20px text-uppercase text-base-color fs-14 lh-42px fw-700 border-radius-100px bg-gradient-very-light-gray-transparent d-inline-block">Vision</span>
+                            <p class="w-95 xl-w-100">We envision ourselves as the premier global authority in crafting tailored software solutions that not only meet but exceed the diverse needs and aspirations of our clients across industries, by relentlessly pursuing innovation, harnessing cutting-edge technologies</p>
                         </div>
 
 
-                        <div class="swiper-slide">
-                            <span
-                                class="ps-25px pe-25px mb-20px text-uppercase text-base-color fs-14 lh-42px fw-700 border-radius-100px bg-gradient-very-light-gray-transparent d-inline-block">Mission</span>
-                      
+                        <div class="swiper">
+                            <span class="ps-25px pe-25px mb-20px text-uppercase text-base-color fs-14 lh-42px fw-700 border-radius-100px bg-gradient-very-light-gray-transparent d-inline-block">Mission</span>
                             <p class="w-95 xl-w-100">Our mission is to leverage our expertise in custom software development and advanced Al technologies to provide innovative solutions that drive tangible, measurable success for our clients.</p>
                         </div>
-
-
-                        <div class="swiper-slide">
-                            <span
-                                class="ps-25px pe-25px mb-20px text-uppercase text-base-color fs-14 lh-42px fw-700 border-radius-100px bg-gradient-very-light-gray-transparent d-inline-block">Core Values</span>
-                          
-                            <p class="w-95 xl-w-100">Trust, Commitment, and Excellence are the core principles that guide our work</p>
-                        </div>
-
-                    </div>
-                    <div class="d-flex justify-content-center justify-content-lg-start">
-
-                        <div
-                            class="slider-one-slide-prev-1 swiper-button-prev slider-navigation-style-04 border border-color-extra-medium-gray bg-white">
-                            <i class="bi bi-arrow-left-short icon-very-medium text-dark-gray"></i></div>
-                        <div
-                            class="slider-one-slide-next-1 swiper-button-next slider-navigation-style-04 border border-color-extra-medium-gray bg-white">
-                            <i class="bi bi-arrow-right-short icon-very-medium text-dark-gray"></i></div>
 
                     </div>
                 </div>
@@ -208,81 +184,20 @@
         <div class="row row-cols-1 row-cols-lg-4 row-cols-sm-2"
             data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;:0, &quot;staggervalue&quot;: 150, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
 
-            <div class="col team-style-08 border-radius-6px md-mb-30px">
+            {% for team in teams %}
+            <div class="col team-style-08 border-radius-6px mb-30px">
                 <figure class="mb-0 position-relative overflow-hidden border-radius-4px">
-                    <img src="/static/web/images/demo-corporate-team-01.jpg" alt />
+                    <img src="{{team.image.url}}" alt />
                     <figcaption
                         class="w-100 h-100 d-flex align-items-end p-13 lg-p-8 md-p-10 bg-gradient-base-transparent border-radius-6px">
                         <div class="w-100">
-                            <span class="team-member-name fw-500 text-white d-block">Jeremy dupont</span>
-                            <span class="member-designation fs-15 lh-20 text-white d-block">Director</span>
-                        </div>
-                        <div class="social-icon d-flex flex-column flex-shrink-1">
-                            <a href="https://www.twitter.com/" target="_blank"
-                                class="text-dark-gray bg-white"><i
-                                    class="fa-brands fa-twitter icon-small"></i></a>
+                            <span class="team-member-name fw-500 text-white d-block">{{team.name}}</span>
+                            <span class="member-designation fs-15 lh-20 text-white d-block">{{team.designation}}</span>
                         </div>
                     </figcaption>
                 </figure>
             </div>
-
-
-            <div class="col team-style-08 border-radius-6px md-mb-30px">
-                <figure class="mb-0 position-relative overflow-hidden border-radius-4px">
-                    <img src="/static/web/images/demo-corporate-team-02.jpg" alt />
-                    <figcaption
-                        class="w-100 h-100 d-flex align-items-end p-13 lg-p-8 md-p-10 bg-gradient-base-transparent border-radius-6px">
-                        <div class="w-100">
-                            <span class="team-member-name fw-500 text-white d-block">Jessica dover</span>
-                            <span class="member-designation fs-15 lh-20 text-white d-block">Founder</span>
-                        </div>
-                        <div class="social-icon d-flex flex-column flex-shrink-1">
-                            <a href="https://www.linkedin.com/" target="_blank"
-                                class="text-dark-gray bg-white"><i
-                                    class="fa-brands fa-linkedin-in icon-small"></i></a>
-                        </div>
-                    </figcaption>
-                </figure>
-            </div>
-
-
-            <div class="col team-style-08 border-radius-6px xs-mb-30px">
-                <figure class="mb-0 position-relative overflow-hidden border-radius-4px">
-                    <img src="/static/web/images/demo-corporate-team-03.jpg" alt />
-                    <figcaption
-                        class="w-100 h-100 d-flex align-items-end p-13 lg-p-8 md-p-10 bg-gradient-base-transparent border-radius-6px">
-                        <div class="w-100">
-                            <span class="team-member-name fw-500 text-white d-block">Matthew taylor</span>
-                            <span class="member-designation fs-15 lh-20 text-white d-block">Manager</span>
-                        </div>
-                        <div class="social-icon d-flex flex-column flex-shrink-1">
-                            <a href="https://www.behance.net/" target="_blank"
-                                class="text-dark-gray bg-white"><i
-                                    class="fa-brands fa-behance icon-small"></i></a>
-                        </div>
-                    </figcaption>
-                </figure>
-            </div>
-
-
-            <div class="col team-style-08 border-radius-6px">
-                <figure class="mb-0 position-relative overflow-hidden border-radius-4px">
-                    <img src="/static/web/images/demo-corporate-team-04.jpg" alt />
-                    <figcaption
-                        class="w-100 h-100 d-flex align-items-end p-13 lg-p-8 md-p-10 bg-gradient-base-transparent border-radius-6px">
-                        <div class="w-100">
-                            <span class="team-member-name fw-500 text-white d-block">Johncy parker</span>
-                            <span class="member-designation fs-15 lh-20 text-white d-block">Manager</span>
-                        </div>
-                        <div class="social-icon d-flex flex-column flex-shrink-1">
-                            <a href="https://www.facebook.com/" target="_blank"
-                                class="text-dark-gray bg-white"><i
-                                    class="fa-brands fa-facebook-f icon-small"></i></a>
-                        </div>
-                    </figcaption>
-                </figure>
-            </div>
-
+            {% endfor %}
         </div>
     </div>
 </section>
@@ -294,8 +209,8 @@
             <div class="col-xl-5 col-lg-6 text-center mb-1"
                 data-anime="{ &quot;translateY&quot;: [0, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
                 <span
-                    class="text-dark-gray fw-700 fs-15 text-uppercase border-1 pb-5px border-bottom border-color-extra-medium-gray text-dark-gray">Join
-                    the 10,000+ companies using crafto</span>
+                    class="text-dark-gray fw-700 fs-15 text-uppercase border-1 pb-5px border-bottom border-color-extra-medium-gray text-dark-gray">
+                    Join the nexteon Experience</span>
             </div>
         </div>
         <div class="row position-relative clients-style-08 mt-25px"
@@ -303,56 +218,11 @@
             <div class="col swiper text-center feather-shadow"
                 data-slider-options="{ &quot;slidesPerView&quot;: 2, &quot;spaceBetween&quot;:0, &quot;speed&quot;: 3000, &quot;loop&quot;: true, &quot;pagination&quot;: { &quot;el&quot;: &quot;.slider-four-slide-pagination-2&quot;, &quot;clickable&quot;: false }, &quot;allowTouchMove&quot;: false, &quot;autoplay&quot;: { &quot;delay&quot;:0, &quot;disableOnInteraction&quot;: false, &quot;pauseOnMouseEnter&quot;: false}, &quot;navigation&quot;: { &quot;nextEl&quot;: &quot;.slider-four-slide-next-2&quot;, &quot;prevEl&quot;: &quot;.slider-four-slide-prev-2&quot; }, &quot;keyboard&quot;: { &quot;enabled&quot;: true, &quot;onlyInViewport&quot;: true }, &quot;breakpoints&quot;: { &quot;1200&quot;: { &quot;slidesPerView&quot;: 5 }, &quot;768&quot;: { &quot;slidesPerView&quot;: 3 }, &quot;576&quot;: { &quot;slidesPerView&quot;: 2 } }, &quot;effect&quot;: &quot;slide&quot; }">
                 <div class="swiper-wrapper marquee-slide">
-
+                    {% for client in clients %}
                     <div class="swiper-slide">
-                        <a href="#"><img src="/static/web/images/logo-walmart-dark-blue.svg" alt /></a>
+                        <a href="#"><img src="{{client.image.url}}" alt /></a>
                     </div>
-
-
-                    <div class="swiper-slide">
-                        <a href="#"><img src="/static/web/images/logo-netflix-dark-blue.svg" alt /></a>
-                    </div>
-
-
-                    <div class="swiper-slide">
-                        <a href="#"><img src="/static/web/images/logo-invision-dark-blue.svg" alt /></a>
-                    </div>
-
-
-                    <div class="swiper-slide">
-                        <a href="#"><img src="/static/web/images/logo-yahoo-dark-blue.svg" alt /></a>
-                    </div>
-
-
-                    <div class="swiper-slide">
-                        <a href="#"><img src="/static/web/images/logo-amazon-dark-blue.svg" alt /></a>
-                    </div>
-
-
-                    <div class="swiper-slide">
-                        <a href="#"><img src="/static/web/images/logo-walmart-dark-blue.svg" alt /></a>
-                    </div>
-
-
-                    <div class="swiper-slide">
-                        <a href="#"><img src="/static/web/images/logo-netflix-dark-blue.svg" alt /></a>
-                    </div>
-
-
-                    <div class="swiper-slide">
-                        <a href="#"><img src="/static/web/images/logo-invision-dark-blue.svg" alt /></a>
-                    </div>
-
-
-                    <div class="swiper-slide">
-                        <a href="#"><img src="/static/web/images/logo-yahoo-dark-blue.svg" alt /></a>
-                    </div>
-
-
-                    <div class="swiper-slide">
-                        <a href="#"><img src="/static/web/images/logo-invision-dark-blue.svg" alt /></a>
-                    </div>
-
+                    {% endfor %}
                 </div>
             </div>
         </div>

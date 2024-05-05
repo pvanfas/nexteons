@@ -1467,30 +1467,7 @@
             },
         });
     });
-    if (typeof $.fn.magnificPopup === "function") {
-        if ($("#subscribe-popup").length > 0) {
-            let delaySecond = 1.5,
-                expireDays = 30,
-                cookieName = "crafto-promo-popup";
-            if (getCookie(cookieName) != "shown") {
-                setTimeout(function () {
-                    $.magnificPopup.open({
-                        showCloseBtn: false,
-                        items: { src: "#subscribe-popup" },
-                        type: "inline",
-                        mainClass: "my-mfp-zoom-in",
-                        callbacks: {
-                            close: function () {
-                                if ($("#newsletter-off").is(":checked")) {
-                                    setCookie(cookieName, "shown", expireDays);
-                                }
-                            },
-                        },
-                    });
-                }, delaySecond * 3500);
-            }
-        }
-    }
+
     if (typeof $.fn.magnificPopup === "function") {
         $(".modal-popup").magnificPopup({ type: "inline", preloader: false, blackbg: true });
         $(document).on("click", ".popup-modal-dismiss", function (e) {

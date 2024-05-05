@@ -1,351 +1,198 @@
 ﻿{% extends 'web/base.html' %}
 {% block content %}
 
-        <section class="top-space-margin page-title-big-typography border-radius-6px lg-border-radius-0px p-0"
-            data-parallax-background-ratio="0.5"
-            style="background-image: url(/static/web/images/demo-corporate-services-title-bg.jpg)">
-            <div class="opacity-extra-medium bg-blue-whale"></div>
-            <div class="container">
-                <div class="row align-items-center justify-content-center small-screen">
-                    <div class="col-lg-8 position-relative text-center page-title-extra-large"
-                        data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-                        <h1 class="m-auto text-white text-shadow-double-large fw-600 ls-minus-2px">Services</h1>
+<section class="top-space-margin page-title-big-typography border-radius-6px lg-border-radius-0px p-0"
+    data-parallax-background-ratio="0.5"
+    style="background-image: url(/static/web/images/demo-corporate-services-title-bg.jpg)">
+    <div class="opacity-extra-medium bg-blue-whale"></div>
+    <div class="container">
+        <div class="row align-items-center justify-content-center small-screen">
+            <div class="col-lg-8 position-relative text-center page-title-extra-large"
+                data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                <h1 class="m-auto text-white text-shadow-double-large fw-600 ls-minus-2px">Services</h1>
+            </div>
+            <div class="down-section text-center"
+                data-anime="{ &quot;translateY&quot;: [-50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                <a href="#down-section" class="section-link">
+                    <div class="text-white">
+                        <i class="feather icon-feather-chevron-down icon-very-medium"></i>
                     </div>
-                    <div class="down-section text-center"
-                        data-anime="{ &quot;translateY&quot;: [-50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-                        <a href="#down-section" class="section-link">
-                            <div class="text-white">
-                                <i class="feather icon-feather-chevron-down icon-very-medium"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="down-section" class="position-relative pb-4 overflow-hidden">
+    <div class="container">
+        <div class="row align-items-center mb-8">
+            <div class="col-lg-5 md-mb-50px"
+                data-anime="{ &quot;translateY&quot;: [0, 0], &quot;perspective&quot;: [1200,1200], &quot;scale&quot;: [1.1, 1], &quot;rotateX&quot;: [50, 0], &quot;opacity&quot;: [0,0.7], &quot;duration&quot;: 800, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                <div class="d-flex flex-column box-shadow-double-large border-radius-8px overflow-hidden">
+                    <div class="row row-cols-1 justify-content-center m-0">
+                        <div
+                            class="col p-9 border-bottom border-color-extra-medium-gray bg-white last-paragraph-no-margin">
+                            <div class="d-flex align-items-center justify-content-center text-dark-gray">
+                                <div class="flex-shrink-0 me-20px">
+                                    <h2 class="mb-0 fs-60 fw-700 ls-minus-2px">99<sup class="fs-26">%</sup></h2>
+                                </div>
+                                <div>
+                                    <span class="fs-18 lh-28 fw-600 d-block">Track and analyze <br />business
+                                        reports.</span>
+                                </div>
                             </div>
+                        </div>
+                        <div
+                            class="col p-9 border-bottom border-color-extra-medium-gray bg-white last-paragraph-no-margin">
+                            <div class="d-flex align-items-center justify-content-center text-dark-gray">
+                                <div class="flex-shrink-0 me-20px">
+                                    <h2 class="mb-0 fs-60 fw-700 ls-minus-4px">4.9</h2>
+                                </div>
+                                <div>
+                                    <div
+                                        class="review-star-icon fs-22 d-inline-block text-gradient-orange-sky-blue">
+                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                            class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                            class="bi bi-star-fill"></i>
+                                    </div>
+                                    <span class="fs-18 lh-28 fw-600 d-block">Best rated agency</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col p-9 bg-white last-paragraph-no-margin">
+                            <div class="d-flex align-items-center justify-content-center text-dark-gray">
+                                <div class="flex-shrink-0 me-20px">
+                                    <h2 class="mb-0 fs-60 fw-700 ls-minus-2px">98<sup class="fs-26">%</sup></h2>
+                                </div>
+                                <div>
+                                    <span class="fs-18 lh-28 fw-600 d-block">Genuine repeated <br />happy
+                                        customers.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-5 offset-lg-1 col-lg-6"
+                data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [30, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;:0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                <span
+                    class="ps-25px pe-25px mb-20px text-uppercase text-base-color fs-14 lh-42px fw-700 border-radius-100px bg-gradient-very-light-gray-transparent d-inline-block">Innovative Solutions</span>
+                <h3 class="text-dark-gray fw-700 ls-minus-1px">Nexteons Services: Driving Your Digital Transformation</h3>
+                <p class="w-95 lg-w-100 mb-35px">Explore Nexteons' comprehensive range of technology services designed to propel your business forward in the digital era, with expertise tailored to your unique requirements.</p>
+               
+            </div>
+        </div>
+    </div>
+    <img src="/static/web/images/demo-corporate-services-bg-01.png"
+        class="position-absolute top-80px left-170px opacity-7 z-index-minus-1"
+        data-bottom-top="transform: rotate(0deg) translateY(0)"
+        data-top-bottom="transform:rotate(-15deg) translateY(0)" alt />
+</section>
+
+
+<section
+    class="bg-gradient-quartz-white position-relative z-index-0 border-radius-6px lg-border-radius-0px overflow-hidden">
+    <div class="container">
+        <div class="row justify-content-center mb-3">
+            <div class="col-xl-5 col-lg-6 text-center"
+                data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [30, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;:0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                <span
+                    class="ps-25px pe-25px mb-10px text-uppercase text-base-color fs-14 lh-42px fw-700 border-radius-100px bg-gradient-quartz-light-transparent d-inline-block">NEXTEONS TECH SOLUTIONS</span>
+                <h3 class="text-dark-gray fw-700 ls-minus-1px">Our services</h3>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-xl-3 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 justify-content-center mb-5 transition-inner-all">
+
+            {% for service in services %}
+            <div class="col interactive-banner-style-02 hover-box dark-hover mb-30px">
+                <div
+                    class="h-100 text-center position-relative border-radius-6px box-shadow-quadruple-large overflow-hidden">
+                    <figure class="m-0">
+                        <a href="{{service.get_absolute_url}}" class="position-relative d-block">
+                            <img src="{{service.image.url}}" alt style="height: 300px;width:100%;object-fit:cover" />
                         </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <section id="down-section" class="position-relative pb-4 overflow-hidden">
-            <div class="container">
-                <div class="row align-items-center mb-8">
-                    <div class="col-lg-5 md-mb-50px"
-                        data-anime="{ &quot;translateY&quot;: [0, 0], &quot;perspective&quot;: [1200,1200], &quot;scale&quot;: [1.1, 1], &quot;rotateX&quot;: [50, 0], &quot;opacity&quot;: [0,0.7], &quot;duration&quot;: 800, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-                        <div class="d-flex flex-column box-shadow-double-large border-radius-8px overflow-hidden">
-                            <div class="row row-cols-1 justify-content-center m-0">
-                                <div
-                                    class="col p-9 border-bottom border-color-extra-medium-gray bg-white last-paragraph-no-margin">
-                                    <div class="d-flex align-items-center justify-content-center text-dark-gray">
-                                        <div class="flex-shrink-0 me-20px">
-                                            <h2 class="mb-0 fs-60 fw-700 ls-minus-2px">99<sup class="fs-26">%</sup></h2>
-                                        </div>
-                                        <div>
-                                            <span class="fs-18 lh-28 fw-600 d-block">Track and analyze <br />business
-                                                reports.</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div
-                                    class="col p-9 border-bottom border-color-extra-medium-gray bg-white last-paragraph-no-margin">
-                                    <div class="d-flex align-items-center justify-content-center text-dark-gray">
-                                        <div class="flex-shrink-0 me-20px">
-                                            <h2 class="mb-0 fs-60 fw-700 ls-minus-4px">4.9</h2>
-                                        </div>
-                                        <div>
-                                            <div
-                                                class="review-star-icon fs-22 d-inline-block text-gradient-orange-sky-blue">
-                                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                                    class="bi bi-star-fill"></i>
-                                            </div>
-                                            <span class="fs-18 lh-28 fw-600 d-block">Best rated agency</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col p-9 bg-white last-paragraph-no-margin">
-                                    <div class="d-flex align-items-center justify-content-center text-dark-gray">
-                                        <div class="flex-shrink-0 me-20px">
-                                            <h2 class="mb-0 fs-60 fw-700 ls-minus-2px">98<sup class="fs-26">%</sup></h2>
-                                        </div>
-                                        <div>
-                                            <span class="fs-18 lh-28 fw-600 d-block">Genuine repeated <br />happy
-                                                customers.</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-5 offset-lg-1 col-lg-6"
-                        data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [30, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;:0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-                        <span
-                            class="ps-25px pe-25px mb-20px text-uppercase text-base-color fs-14 lh-42px fw-700 border-radius-100px bg-gradient-very-light-gray-transparent d-inline-block">Innovative Solutions</span>
-                        <h3 class="text-dark-gray fw-700 ls-minus-1px">Nexteons Services: Driving Your Digital Transformation</h3>
-                        <p class="w-95 lg-w-100 mb-35px">Explore Nexteons' comprehensive range of technology services designed to propel your business forward in the digital era, with expertise tailored to your unique requirements.</p>
-                        <div
-                            class="feature-box feature-box-left-icon bg-gradient-flamingo-amethyst-green border-radius-4px w-95 xl-w-100 mb-40px ps-30px pe-30px pt-15px pb-15px xs-p-15px sm-mb-30px xs-lh-normal">
-                            <div class="feature-box-icon me-10px">
-                                <img src="/static/web/images/demo-beauty-salon-story-03.png" class="h-30px" alt>
-                            </div>
-                            <div class="feature-box-content">
-                                <span class="alt-font text-white fw-500">Trusted Software Partner for Your Business Success</span>
-                            </div>
-                        </div>
-                        <div class="row align-items-center text-center text-sm-start">
-                            <div class="col-sm-auto xs-mb-5px">
-                                <h3
-                                    class="alt-font text-dark-gray mb-0 d-inline-block align-middle me-10px lg-fs-32 fw-700">
-                                    500+</h3>
-                                {% comment %} <div
-                                    class="text-center bg-dark-gray text-white fs-14 border-radius-4px d-inline-block ps-15px pe-15px lh-34 align-middle me-5px">
-                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                        class="bi bi-star-fill"></i></div> {% endcomment %}
-                            </div>
+                        <figcaption class="w-100 position-absolute bottom-0px bg-white">
                             <div
-                                class="col-sm border-start border-2 border-color-dark-gray ps-25px ms-10px xl-ps-20px lg-ms-5px xs-border-start-0 xs-ps-15px xs-pe-15px xs-m-0">
-                                <p class="m-0 lh-26 text-dark-gray fw-600">Successful offshore and national engagements
-                                </p>
+                                class="position-relative z-index-2 p-40px pt-25px pb-15px border-bottom border-dark-opacity">
+                                <a href="{{service.get_absolute_url}}"
+                                    class="fw-600 d-inline-block mb-5px text-dark-gray fs-18">{{service.title}}</a>
+                                <p class="lg-w-100 fs-14 lh-26 mx-auto mb-15px lg-mb-10px text-light-opacity">
+                                    {{service.description}}</p>
                             </div>
-                        </div>
+                            <a href="{{service.get_absolute_url}}"
+                                class="btn btn-link btn-hover-animation-switch btn-small fw-700 text-dark-gray text-uppercase p-20px z-index-1">
+                                <span>
+                                    <span class="btn-text">Explore services</span>
+                                    <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                                    <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                                </span>
+                            </a>
+                            <div class="box-overlay bg-base-color"></div>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+        <img src="/static/web/images/demo-corporate-services-bg-02.png"
+            class="position-absolute top-20 right-60px z-index-minus-1"
+            data-bottom-top="transform: rotate(0deg) translateY(0)"
+            data-top-bottom="transform:rotate(-15deg) translateY(0)" alt />
+        <div class="row justify-content-center g-0">
+            <div class="col-auto text-center last-paragraph-no-margin icon-with-text-style-08">
+                <div
+                    class="feature-box feature-box-left-icon-middle overflow-hidden ps-30px pe-30px xs-ps-15px xs-pe-15px ">
+                    <div class="feature-box-icon me-10px">
+                        <i class="bi bi-chat-text fs-24 icon-very-medium text-base-color"></i>
+                    </div>
+                    <div
+                        class="feature-box-content last-paragraph-no-margin text-dark-gray text-uppercase fs-15 fw-700 ls-05px">
+                        Let's make something great together. <a href="{% url 'web:contact' %}"
+                            class="text-base-color text-decoration-line-bottom-medium border-1">Got a project in
+                            mind?</a>
                     </div>
                 </div>
             </div>
-            <img src="/static/web/images/demo-corporate-services-bg-01.png"
-                class="position-absolute top-80px left-170px opacity-7 z-index-minus-1"
-                data-bottom-top="transform: rotate(0deg) translateY(0)"
-                data-top-bottom="transform:rotate(-15deg) translateY(0)" alt />
-        </section>
+        </div>
+    </div>
+</section>
 
 
-        <section
-            class="bg-gradient-quartz-white position-relative z-index-0 border-radius-6px lg-border-radius-0px overflow-hidden">
-            <div class="container">
-                <div class="row justify-content-center mb-3">
-                    <div class="col-xl-5 col-lg-6 text-center"
-                        data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [30, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;:0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-                        <span
-                            class="ps-25px pe-25px mb-10px text-uppercase text-base-color fs-14 lh-42px fw-700 border-radius-100px bg-gradient-quartz-light-transparent d-inline-block">NEXTEONS TECH SOLUTIONS</span>
-                        <h3 class="text-dark-gray fw-700 ls-minus-1px">Our services</h3>
-                    </div>
-                </div>
-                <div class="row row-cols-1 row-cols-xl-3 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 justify-content-center mb-5 transition-inner-all"
-                    data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [30, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;:0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-
-                    <div class="col interactive-banner-style-02 hover-box dark-hover md-mb-30px">
-                        <div
-                            class="h-100 text-center position-relative border-radius-6px box-shadow-quadruple-large overflow-hidden">
-                            <figure class="m-0">
-                                <a href="demo-corporate-services-details.html" class="position-relative d-block">
-                                    <img src="/static/web/images/services/software-development.jpg" alt />
-                                    <div
-                                        class="label position-absolute right-20px top-20px bg-base-color fw-600 text-white text-uppercase border-radius-30px ps-15px pe-15px fs-11 ls-05px">
-                                        Creativity</div>
-                                </a>
-                                <figcaption class="w-100 position-absolute bottom-0px bg-white">
-                                    <div
-                                        class="position-relative z-index-2 p-40px pt-25px pb-15px border-bottom border-dark-opacity">
-                                        <i class="features-icon line-icon-Archery-2 d-block icon-extra-large"></i>
-                                        <a href="demo-corporate-services-details.html"
-                                            class="fw-600 d-inline-block mb-5px text-dark-gray fs-18">Software Development</a>
-                                        <p class="w-80 lg-w-100 fs-16 mx-auto mb-15px lg-mb-10px text-light-opacity">
-                                            Crafted with precision and innovation, Nexteons' software development services ...</p>
-                                    </div>
-                                    <a href="demo-corporate-services-details.html"
-                                        class="btn btn-link btn-hover-animation-switch btn-small fw-700 text-dark-gray text-uppercase p-20px z-index-1">
-                                        <span>
-                                            <span class="btn-text">Explore services</span>
-                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                        </span>
-                                    </a>
-                                    <div class="box-overlay bg-base-color"></div>
-                                </figcaption>
-                            </figure>
+<section class="position-relative">
+    <div class="container">
+        <div class="row align-items-center">
+           
+            <div class="col-xl-12 col-lg-12 text-center text-md-start">
+                <span class="ps-25px pe-25px mb-20px text-uppercase text-base-color fs-14 lh-42px fw-700 border-radius-100px bg-gradient-very-light-gray-transparent d-inline-block">Frequently
+                    asked questions</span>
+                <h3 class="text-dark-gray fw-700 ls-minus-1px w-90 mb-50px md-mb-30px lg-w-100">What we can do
+                    for you and company.</h3>
+                <div class="accordion accordion-style-06 text-start" id="accordion-style-07">
+                    {% for faq in faqs %}
+                    <div class="accordion-item active-accordion">
+                        <div class="accordion-header">
+                            <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion_{{forloop.counter}}"
+                                aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}" data-bs-parent="#accordion-style-07">
+                                <div
+                                    class="accordion-title fs-18 position-relative pe-0 alt-font text-dark-gray fw-600 mb-0">
+                                    {{faq.question}}</div>
+                            </a>
                         </div>
-                    </div>
-
-
-                    <div class="col interactive-banner-style-02 hover-box dark-hover md-mb-30px">
-                        <div
-                            class="h-100 text-center position-relative border-radius-6px box-shadow-quadruple-large overflow-hidden">
-                            <figure class="m-0">
-                                <a href="demo-corporate-services-details.html" class="position-relative d-block">
-                                    <img src="/static/web/images/services/mobile-application.jpg" alt />
-                                    <div
-                                        class="label position-absolute right-20px top-20px bg-base-color fw-600 text-white text-uppercase border-radius-30px ps-15px pe-15px fs-11 ls-05px">
-                                        Discover</div>
-                                </a>
-                                <figcaption class="w-100 position-absolute bottom-0px bg-white">
-                                    <div
-                                        class="position-relative z-index-2 p-40px pt-25px pb-15px border-bottom border-dark-opacity">
-                                        <i class="features-icon line-icon-Coins d-block icon-extra-large"></i>
-                                        <a href="demo-corporate-services-details.html"
-                                            class="fw-600 d-inline-block mb-5px text-dark-gray fs-18">Mobile Application Development</a>
-                                        <p class="w-80 lg-w-100 fs-16 mx-auto mb-15px lg-mb-10px text-light-opacity">
-                                            Nexteons is your partner in Mobile Application Development,....</p>
-                                    </div>
-                                    <a href="demo-corporate-services-details.html"
-                                        class="btn btn-link btn-hover-animation-switch btn-small fw-700 text-dark-gray text-uppercase p-20px z-index-1">
-                                        <span>
-                                            <span class="btn-text">Explore services</span>
-                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                        </span>
-                                    </a>
-                                    <div class="box-overlay bg-base-color"></div>
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div>
-
-
-                    <div class="col interactive-banner-style-02 hover-box dark-hover md-mb-30px">
-                        <div
-                            class="h-100 text-center position-relative border-radius-6px box-shadow-quadruple-large overflow-hidden">
-                            <figure class="m-0">
-                                <a href="demo-corporate-services-details.html" class="position-relative d-block">
-                                    <img src="/static/web/images/services/web-development.jpg" alt />
-                                    <div
-                                        class="label position-absolute right-20px top-20px bg-base-color fw-600 text-white text-uppercase border-radius-30px ps-15px pe-15px fs-11 ls-05px">
-                                        Modern</div>
-                                </a>
-                                <figcaption class="w-100 position-absolute bottom-0px bg-white">
-                                    <div
-                                        class="position-relative z-index-2 p-40px pt-25px pb-15px border-bottom border-dark-opacity">
-                                        <i class="features-icon line-icon-Bar-Chart3 d-block icon-extra-large"></i>
-                                        <a href="demo-corporate-services-details.html"
-                                            class="fw-600 d-inline-block mb-5px text-dark-gray fs-18">Web Development</a>
-                                        <p class="w-80 lg-w-100 fs-16 mx-auto mb-15px lg-mb-10px text-light-opacity">
-                                            Elevate your online presence with Nexteons' Web Development services. Our expert team...</p>
-                                    </div>
-                                    <a href="demo-corporate-services-details.html"
-                                        class="btn btn-link btn-hover-animation-switch btn-small fw-700 text-dark-gray text-uppercase p-20px z-index-1">
-                                        <span>
-                                            <span class="btn-text">Explore services</span>
-                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                            <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                        </span>
-                                    </a>
-                                    <div class="box-overlay bg-base-color"></div>
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div>
-
-                </div>
-                <img src="/static/web/images/demo-corporate-services-bg-02.png"
-                    class="position-absolute top-20 right-60px z-index-minus-1"
-                    data-bottom-top="transform: rotate(0deg) translateY(0)"
-                    data-top-bottom="transform:rotate(-15deg) translateY(0)" alt />
-                <div class="row justify-content-center g-0">
-                    <div class="col-auto text-center last-paragraph-no-margin icon-with-text-style-08">
-                        <div
-                            class="feature-box feature-box-left-icon-middle overflow-hidden ps-30px pe-30px xs-ps-15px xs-pe-15px ">
-                            <div class="feature-box-icon me-10px">
-                                <i class="bi bi-chat-text fs-24 icon-very-medium text-base-color"></i>
-                            </div>
-                            <div
-                                class="feature-box-content last-paragraph-no-margin text-dark-gray text-uppercase fs-15 fw-700 ls-05px">
-                                Let's make something great work together. <a href="{% url 'web:contact' %}"
-                                    class="text-base-color text-decoration-line-bottom-medium border-1">Got a project in
-                                    mind?</a>
+                        <div id="accordion_{{forloop.counter}}" class="accordion-collapse collapse {% if forloop.first %}show{% else %}hidden{% endif %}"
+                            data-bs-parent="#accordion-style-07">
+                            <div class="accordion-body last-paragraph-no-margin">
+                                <p>{{faq.answer}}</p>
+                                <i class="line-icon-Sand-watch icon-extra-double-large opacity-2"></i>
                             </div>
                         </div>
                     </div>
+                    {% endfor %}
+
                 </div>
             </div>
-        </section>
-
-
-        <section class="position-relative pt-0">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 position-relative md-mb-50px text-center text-md-center"
-                        data-anime="{ &quot;opacity&quot;: [0,1], &quot;duration&quot;: 1200, &quot;delay&quot;:0, &quot;staggervalue&quot;: 150, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-                        <img src="/static/web/images/demo-corporate-services-05.png" alt>
-                        <img src="/static/web/images/demo-corporate-05.png"
-                            class="position-absolute top-70px left-minus-20px lg-left-0px d-none d-sm-block"
-                            data-bottom-top="transform: translateY(-50px)" data-top-bottom="transform: translateY(50px)"
-                            alt>
-                        <img src="/static/web/images/demo-corporate-services-04.png"
-                            class="position-absolute bottom-0px left-minus-60px lg-left-minus-30px xs-left-minus-10px xs-w-50"
-                            data-bottom-top="transform: translateY(50px)" data-top-bottom="transform: translateY(-50px)"
-                            alt>
-                        <img src="/static/web/images/demo-corporate-08.png"
-                            class="position-absolute top-30 right-90px d-none d-sm-block"
-                            data-bottom-top="transform: translateY(-50px)" data-top-bottom="transform: translateY(50px)"
-                            alt>
-                    </div>
-                    <div class="col-xl-5 offset-xl-1 col-lg-6 text-center text-md-start"
-                        data-anime="{ &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;:0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-                        <span
-                            class="ps-25px pe-25px mb-20px text-uppercase text-base-color fs-14 lh-42px fw-700 border-radius-100px bg-gradient-very-light-gray-transparent d-inline-block">Frequently
-                            asked questions</span>
-                        <h3 class="text-dark-gray fw-700 ls-minus-1px w-90 mb-50px md-mb-30px lg-w-100">What we can do
-                            for you and company.</h3>
-                        <div class="accordion accordion-style-06 text-start" id="accordion-style-07">
-
-                            <div class="accordion-item active-accordion">
-                                <div class="accordion-header">
-                                    <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-style-07-01"
-                                        aria-expanded="true" data-bs-parent="#accordion-style-07">
-                                        <div
-                                            class="accordion-title fs-18 position-relative pe-0 alt-font text-dark-gray fw-600 mb-0">
-                                            How long does it typically take to develop a software solution with Nexteons?</div>
-                                    </a>
-                                </div>
-                                <div id="accordion-style-07-01" class="accordion-collapse collapse show"
-                                    data-bs-parent="#accordion-style-07">
-                                    <div class="accordion-body last-paragraph-no-margin">
-                                        <p>Our development timelines vary depending on the complexity and scope of the project. However, we work closely with our clients to establish clear milestones and timelines during the initial consultation phase. Rest assured, our goal is to deliver high-quality software solutions within a reasonable timeframe.</p>
-                                        <i class="line-icon-Sand-watch icon-extra-double-large opacity-2"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="accordion-item">
-                                <div class="accordion-header">
-                                    <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-style-07-02"
-                                        aria-expanded="false" data-bs-parent="#accordion-style-07">
-                                        <div
-                                            class="accordion-title fs-18 position-relative pe-0 alt-font text-dark-gray fw-600 mb-0">
-                                            What industries does Nexteons specialize in for mobile application development?</div>
-                                    </a>
-                                </div>
-                                <div id="accordion-style-07-02" class="accordion-collapse collapse"
-                                    data-bs-parent="#accordion-style-07">
-                                    <div class="accordion-body last-paragraph-no-margin">
-                                        <p>Nexteons has experience developing mobile applications for a wide range of industries, including but not limited to retail, healthcare, finance, education, and logistics. Our team has the expertise to tailor mobile solutions to meet the unique needs and requirements of various sectors.
-                                        </p>
-                                        <i class="line-icon-Car-Wheel icon-extra-double-large opacity-2"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="accordion-item">
-                                <div class="accordion-header">
-                                    <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-style-07-03"
-                                        aria-expanded="false" data-bs-parent="#accordion-style-07">
-                                        <div
-                                            class="accordion-title fs-18 position-relative pe-0 alt-font text-dark-gray fw-600 mb-0">
-                                            How does Nexteons ensure the security of web applications developed for clients?</div>
-                                    </a>
-                                </div>
-                                <div id="accordion-style-07-03" class="accordion-collapse collapse"
-                                    data-bs-parent="#accordion-style-07">
-                                    <div class="accordion-body last-paragraph-no-margin">
-                                        <p>Security is a top priority at Nexteons. We employ industry best practices and adhere to stringent security protocols throughout the development process. From implementing secure coding practices to conducting thorough security testing, we take every measure to safeguard our clients' web applications against potential threats and vulnerabilities.
-
-                                        </p>
-                                        <i class="line-icon-Gear-2 icon-extra-double-large opacity-2"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        {% endblock %}
+        </div>
+    </div>
+</section>
+{% endblock %}

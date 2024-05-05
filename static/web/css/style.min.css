@@ -13213,11 +13213,13 @@ blockquote footer {
 
 .clients-style-06 .client-box {
     -webkit-transition: all .3s cubic-bezier(.12, 0, .39, 0);
-    transition: all .3s cubic-bezier(.12, 0, .39, 0)
+    transition: all .3s cubic-bezier(.12, 0, .39, 0);
+    padding: 20px;
 }
 
 .clients-style-06 .client-box img {
-    max-width: inherit
+    max-width: inherit;
+    height: 45px;
 }
 
 .clients-style-06:hover .client-box {
@@ -22836,7 +22838,14 @@ footer .footer-navbar .nav-item:last-child a {
 .footer-demo img {
     max-height: 55px !important
 }
-.about-title{
+
+.about-title {
     font-size: 30px !important;
-    }
-/*# sourceMappingURL=style.min.css.map */
+}
+
+.testimonial_img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}

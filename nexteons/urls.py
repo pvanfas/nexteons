@@ -10,6 +10,7 @@ urlpatterns = (
         path("", include("web.urls", namespace="web")),
         path("sitemap.xml", TemplateView.as_view(template_name="sitemap.xml", content_type="text/xml")),
         path("robots.txt", TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
+        path("ckeditor5/", include("django_ckeditor_5.urls"), name="ck_editor_5_upload_file"),
     ]
     + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
