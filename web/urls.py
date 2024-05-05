@@ -1,5 +1,4 @@
 from django.urls import path
-from django.views.generic import TemplateView
 
 from . import views
 
@@ -13,8 +12,7 @@ urlpatterns = [
     path("products/", views.products, name="products"),
     path("careers/", views.careers, name="careers"),
     path("contact/", views.contact, name="contact"),
-    #
-    path("blog_detail/", TemplateView.as_view(template_name="web/blog_detail.html"), name="blog_detail"),
-    path("customer_stories/", TemplateView.as_view(template_name="web/customer_stories.html"), name="customer_stories"),
-    path("service_detail/", TemplateView.as_view(template_name="web/service_detail.html"), name="service_detail"),
+    path("blog/<slug:slug>/", views.blog_detail, name="blog_detail"),
+    path("service/<slug:slug>/", views.service_detail, name="service_detail"),
+    path("product/<slug:slug>/", views.product_detail, name="product_detail"),
 ]

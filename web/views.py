@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 
 from .forms import ContactForm
 from .models import Blog, Career, Client, FrequentlyAskedQuestion, Product, Service, Slider, Team, Testimonial
@@ -6,11 +6,10 @@ from .models import Blog, Career, Client, FrequentlyAskedQuestion, Product, Serv
 
 def index(request):
     sliders = Slider.objects.all()
-    services = Service.objects.all()
     testimonials = Testimonial.objects.all()
     clients = Client.objects.all()
     blogs = Blog.objects.all()[0:3]
-    context = {"is_index": True, "sliders": sliders, "services": services, "testimonials": testimonials, "clients": clients, "blogs": blogs}
+    context = {"is_index": True, "sliders": sliders, "testimonials": testimonials, "clients": clients, "blogs": blogs}
     return render(request, "web/index.html", context)
 
 
@@ -28,15 +27,13 @@ def blogs(request):
 
 
 def services(request):
-    services = Service.objects.all()
     faqs = FrequentlyAskedQuestion.objects.all()
-    context = {"is_services": True, "services": services, "faqs": faqs}
+    context = {"is_services": True, "faqs": faqs}
     return render(request, "web/services.html", context)
 
 
 def products(request):
-    products = Product.objects.all()
-    context = {"is_products": True, "products": products}
+    context = {"is_products": True}
     return render(request, "web/products.html", context)
 
 
@@ -54,3 +51,28 @@ def contact(request):
             form = ContactForm()
     context = {"is_contact": True, "form": form}
     return render(request, "web/contact.html", context)
+
+
+def blog_detail(request, slug):
+    blog = Blog.objects.get(slug=slug)
+    context = {"is_blogs": True, "blog": blog}
+    return render(request, "web/blog_detail.html", context)
+
+
+def service_detail(request, slug):
+    service = Service.objects.get(slug=slug)
+    context = {"is_services": True, "service": service}
+    return render(request, "web/service_detail.html", context)
+
+
+def product_detail(request, slug):
+    product = Product.objects.get(slug=slug)
+    context = {
+        "is_products": True,
+        "product": product,
+    }
+    return render(request, "web/product_detail.html", context)
+
+
+def view_404(request, exception=None):
+    return redirect("/")

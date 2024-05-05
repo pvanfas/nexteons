@@ -19,3 +19,6 @@ urlpatterns = (
 admin.site.site_header = "Nexteons Administration"
 admin.site.site_title = "Nexteons Admin Portal"
 admin.site.index_title = "Welcome to Nexteons Admin Portal"
+
+
+handler404 = "web.views.view_404"

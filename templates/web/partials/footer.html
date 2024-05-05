@@ -43,22 +43,19 @@
             <div class="col-6 col-xl-2 col-lg-3 col-sm-4 xs-mb-30px order-sm-4 order-lg-3">
                 <span class="fs-17 fw-600 d-block text-dark-gray mb-5px">Services</span>
                 <ul>
-                    <li><a href="#">Software Development</a></li>
-                    <li><a href="#">Mobile Application Development</a></li>
-                    <li><a href="#">Web Development</a></li>
-                    <li><a href="#">E-commerce Solutions</a></li>
-                    <li><a href="#">Cloud Computing</a></li>
+                    {% for service in services %}
+                    <li><a href="{{service.get_absolute_url}}">{{service.title}}</a></li>
+                    {% endfor %}
                 </ul>
             </div>
 
 
             <div class="col-6 col-xl-2 col-lg-3 col-sm-4 xs-mb-30px order-sm-5 order-lg-4">
-                <span class="fs-17 fw-600 d-block text-dark-gray mb-5px">Customer</span>
+                <span class="fs-17 fw-600 d-block text-dark-gray mb-5px">Products</span>
                 <ul>
-                    <li><a href="#">Client support</a></li>
-                    <li><a href="#">Help center</a></li>
-                    <li><a href="#">System status</a></li>
-                    <li><a href="#">Feedback</a></li>
+                    {% for product in products %}
+                    <li><a href="{{product.get_absolute_url}}">{{product.title}}</a></li>
+                    {% endfor %}
                 </ul>
             </div>
 
@@ -93,7 +90,7 @@
 
             <div
                 class="col-lg-5 pt-35px pb-35px md-pt-0 order-2 order-lg-1 text-center text-lg-start last-paragraph-no-margin">
-                <p>&copy; 2024 Nexteons is Proudly Powered by <a href="#" target="_blank"
+                <p>&copy; 2024 Nexteons. Proudly Powered by <a href="#" target="_blank"
                         class="text-dark-gray fw-600 text-decoration-line-bottom">Prodix Creatives</a></p>
             </div>
 

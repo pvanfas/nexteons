@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from django_ckeditor_5.fields import CKEditor5Field
 
 
@@ -20,7 +21,11 @@ class Service(models.Model):
     slug = models.SlugField(unique=True)
     subtitle = models.CharField(max_length=100)
     description = models.TextField()
+    summary = models.TextField()
     image = models.ImageField(upload_to="service/")
+
+    def get_absolute_url(self):
+        return reverse("web:service_detail", kwargs={"slug": self.slug})
 
     def __str__(self):
         return self.title
@@ -62,6 +67,9 @@ class Blog(models.Model):
     class Meta:
         ordering = ["-timestamp"]
 
+    def get_absolute_url(self):
+        return reverse("web:blog_detail", kwargs={"slug": self.slug})
+
     def __str__(self):
         return self.title
 
@@ -90,9 +98,14 @@ class Product(models.Model):
     subtitle = models.CharField(max_length=100)
     description = models.TextField()
     image = models.ImageField(upload_to="product/")
-    content = CKEditor5Field("Text", config_name="extends", blank=True, null=True)
+    content = CKEditor5Field("Content", config_name="extends", blank=True, null=True)
     product_link = models.CharField(max_length=100, blank=True, null=True)
     open_link = models.CharField(max_length=100, choices=(("EXTERNAL", "EXTERNAL WEBSITE"), ("PRODUCT_PAGE", "PRODUCT PAGE")), default="PRODUCT_PAGE")
+
+    def get_absolute_url(self):
+        if self.open_link == "EXTERNAL":
+            return self.product_link
+        return reverse("web:product_detail", kwargs={"slug": self.slug})
 
     def __str__(self):
         return self.title

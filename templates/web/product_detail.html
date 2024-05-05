@@ -8,7 +8,7 @@
         <div class="row align-items-center justify-content-center small-screen">
             <div class="col-lg-8 position-relative text-center page-title-extra-large"
                 data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-                <h1 class="m-auto text-white text-shadow-double-large fw-600 ls-minus-2px">{{service.title}}</h1>
+                <h1 class="m-auto text-white text-shadow-double-large fw-600 ls-minus-2px">{{product.title}}</h1>
             </div>
             <div class="down-section text-center"
                 data-anime="{ &quot;translateY&quot;: [-50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
@@ -29,11 +29,11 @@
             <div class="col-lg-4 pe-5 order-2 order-lg-1 lg-pe-3 md-pe-15px"
                 data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 1200, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 150, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
                 <div class="bg-solitude-blue border-radius-6px p-45px lg-p-30px mb-25px">
-                    <span class="fs-19 alt-font text-dark-gray fw-700 mb-20px d-inline-block">Our Services</span>
+                    <span class="fs-19 alt-font text-dark-gray fw-700 mb-20px d-inline-block">Our products</span>
                     <ul class="p-0 m-0 list-style-02 fw-500">
-                        {% for service in services %}
+                        {% for product in products %}
                         <li class="pb-10px mb-10px border-bottom border-color-transparent-dark">
-                            <a href="{{service.get_absolute_url}}">{{service.title}}</a>
+                            <a href="{{product.get_absolute_url}}">{{product.title}}</a>
                             <i class="feather icon-feather-arrow-right ms-auto"></i>
                         </li>
                         {% endfor %}
@@ -57,57 +57,35 @@
             </div>
             <div class="col-lg-8 order-1 order-lg-2 md-mb-50px"
                 data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [30, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;:0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-                <h4 class="text-dark-gray fw-700 alt-font mb-20px d-block">{{service.title}}</h4>
+                <h4 class="text-dark-gray fw-700 alt-font mb-20px d-block">{{product.title}}</h4>
                 <p>
-                    {{service.summary}}
+                    {{product.content|safe}}
                 </p>
   
                 <div class="cover-background p-7 border-radius-6px mb-60px md-mb-40px d-flex justify-content-end align-items-end sm-h-500px"
-                    style="background-image: url({{service.image.url}})">
+                    style="background-image: url({{product.image.url}})">
                     <div class="opacity-light bg-gradient-regal-blue-transparent"></div>
                     <div
                         class="bg-white box-shadow-quadruple-large border-radius-4px w-50 lg-w-60 sm-w-100 overflow-hidden z-index-1">
                         <div class="p-40px lg-p-30px last-paragraph-no-margin">
                             <span
-                                class="fs-24 ls-minus-05px alt-font text-dark-gray fw-700 mb-10px d-block">Get a Free Quote</span>
-                            <p class="w-95 lg-w-100">
-                                Ready to take your project to the next level? Get a personalized quote tailored to your specific needs and requirements.
-                            </p>
+                                class="fs-20 ls-minus-05px alt-font text-dark-gray fw-700 mb-10px d-block">Get a Free Demo Today</span>
+                           
                         </div>
                         <div class="bg-dark-gray p-15px text-center">
-                            <a href="{% url 'web:contact' %}" class="text-white text-white-hover fw-500"><i
-                                    class="feather icon-feather-mail me-10px"></i>Talk with our team</a>
+                            {% if product.open_link == "EXTERNAL" %}
+                            <a href="{{product.get_absolute_url}}" class="text-white text-white-hover fw-500">
+                                <i class="feather icon-feather-mail me-10px"></i>Start Your Free Trial Today!
+                            </a>
+                            {% else %}
+                            <a href="{% url 'web:contact' %}" class="text-white text-white-hover fw-500">
+                                <i class="feather icon-feather-mail me-10px"></i>Start Your Free Trial Today!
+                            </a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
-                <h4 class="text-dark-gray fw-700 alt-font mb-40px lg-mb-30px d-block">Benefits of working with
-                    us</h4>
-                <div
-                    class="border border-color-extra-medium-gray border-radius-6px mb-40px xs-mb-30px overflow-hidden">
-                    <p
-                        class="ps-30px pe-30px pt-25px pb-25px border-bottom border-1 border-color-extra-medium-gray mb-0">
-                        <span class="fw-700 text-dark-gray">Great client service: </span>We genuinely care about
-                        our customers lives and the experience we give them. That's why we put your best
-                        interests first.</p>
-                    <p
-                        class="ps-30px pe-30px pt-25px pb-25px border-bottom border-1 border-color-extra-medium-gray mb-0 bg-solitude-blue">
-                        <span class="fw-700 text-dark-gray">Investment strategy: </span>You can expect our
-                        advisors to keep your needs in the forefront and focus on your overall experience before
-                        creating a plan.</p>
-                    <p class="ps-30px pe-30px pt-25px pb-25px mb-0"><span class="fw-700 text-dark-gray">Internal
-                            expertise: </span>Our team of investment advisors has advanced knowledge of the most
-                        current markets and the ability to navigate them effortlessly.</p>
-                </div>
-                <div class="row align-items-center justify-content-center g-0">
-                    <div class="col-12 d-block d-sm-flex align-items-center text-center text-sm-start">
-                        <div class="lh-28 last-paragraph-no-margin text-dark-gray ps-15px xs-ps-0 xs-mt-15px">
-                            <p>Save your time and effort spent for finding a solution. <a
-                                    href="{% url 'web:contact' %}"
-                                    class="text-decoration-line-bottom fw-700 text-dark-gray">Contact us now</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>
