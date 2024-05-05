@@ -45,7 +45,7 @@ class Client(models.Model):
     image = models.ImageField(upload_to="client/")
 
     def __str__(self):
-        return self.image.url
+        return str(self.image.url)
 
 
 class BlogCategory(models.Model):
