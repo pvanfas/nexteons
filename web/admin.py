@@ -31,7 +31,7 @@ class TestimonialAdmin(ImportExportActionModelAdmin):
 
 @admin.register(Client)
 class ClientAdmin(ImportExportActionModelAdmin):
-    list_display = ("image",)
+    pass
 
 
 @admin.register(BlogCategory)
