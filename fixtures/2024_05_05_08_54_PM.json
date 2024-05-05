@@ -63,58 +63,6 @@
     }
   },
   {
-    "model": "auth.group",
-    "pk": 1,
-    "fields": {
-      "name": "Moderators",
-      "permissions": [45, 146, 147, 149, 148, 150, 151, 153, 152]
-    }
-  },
-  {
-    "model": "auth.group",
-    "pk": 2,
-    "fields": {
-      "name": "Editors",
-      "permissions": [45, 146, 147, 149, 148, 150, 151, 153, 152]
-    }
-  },
-  {
-    "model": "auth.user",
-    "pk": 1,
-    "fields": {
-      "password": "pbkdf2_sha256$600000$2wYURdxPLWxk66r0H9kcDy$6v6nueTgaaaKf6bA1ziTyTzZcvW6W9ezsq3GZq7fb7c=",
-      "last_login": null,
-      "is_superuser": true,
-      "username": "admin",
-      "first_name": "",
-      "last_name": "",
-      "email": "",
-      "is_staff": true,
-      "is_active": true,
-      "date_joined": "2024-04-19T13:36:42.676Z",
-      "groups": [],
-      "user_permissions": []
-    }
-  },
-  {
-    "model": "auth.user",
-    "pk": 2,
-    "fields": {
-      "password": "pbkdf2_sha256$600000$x9VARmG9kiD08VlWrEVkDo$zKmMmIzZ1dJDeSN8CFTan5Q5EiCd8znbxBbjU+cWHiU=",
-      "last_login": null,
-      "is_superuser": true,
-      "username": "anfas",
-      "first_name": "",
-      "last_name": "",
-      "email": "",
-      "is_staff": true,
-      "is_active": true,
-      "date_joined": "2024-04-19T13:36:50.725Z",
-      "groups": [],
-      "user_permissions": []
-    }
-  },
-  {
     "model": "auth.user",
     "pk": 3,
     "fields": {
