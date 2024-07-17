@@ -3,6 +3,7 @@ from django.shortcuts import redirect, render
 
 from .forms import ContactForm
 from .models import Blog, Career, Client, FrequentlyAskedQuestion, Product, Service, Slider, Team, Testimonial
+from .functions import send_contact_mail
 
 
 def index(request):
@@ -48,10 +49,12 @@ def contact(request):
     form = ContactForm(request.POST or None)
     if request.method == "POST":
         if form.is_valid():
-            form.save()
+            data = form.save()
             form = ContactForm()
             # create a django message
             messages.success(request, "Your message has been sent successfully.")
+            send_contact_mail(data)
+
     context = {"is_contact": True, "form": form}
     return render(request, "web/contact.html", context)
 

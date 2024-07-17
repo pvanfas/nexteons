@@ -147,6 +147,20 @@ STATIC_FILE_ROOT = BASE_DIR / "static"
 STATICFILES_DIRS = ((BASE_DIR / "static"),)
 STATIC_ROOT = BASE_DIR / "assets"
 
+
+EMAIL_BACKEND = config("EMAIL_BACKEND", default="django.core.mail.backends.smtp.EmailBackend")
+EMAIL_HOST = config("EMAIL_HOST", default="smtp-relay.brevo.com")
+EMAIL_PORT = config("EMAIL_PORT", default=587, cast=int)
+EMAIL_HOST_USER = config("EMAIL_HOST_USER", default="78d16c002@smtp-brevo.com")
+EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD", default="fGcWkKndjBa2V7wr")
+EMAIL_USE_TLS = True
+
+DEFAULT_FROM_EMAIL = config("DEFAULT_FROM_EMAIL", default=EMAIL_HOST_USER)
+DEFAULT_BCC_EMAIL = config("DEFAULT_BCC_EMAIL", default=EMAIL_HOST_USER)
+DEFAULT_REPLY_TO_EMAIL = config("DEFAULT_REPLY_TO_EMAIL", default=EMAIL_HOST_USER)
+SERVER_EMAIL = config("SERVER_EMAIL", default=EMAIL_HOST_USER)
+ADMIN_EMAIL = config("ADMIN_EMAIL", default=EMAIL_HOST_USER)
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
